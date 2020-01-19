@@ -12,9 +12,8 @@
     "lint:eslint-fix": "lerna run --parallel lint:eslint-fix",
     "lint:tslint": "lerna run --parallel lint:tslint",
     "lint:tslint-fix": "lerna run --parallel lint:tslint-fix",
-    "lint": "npm run lint:eslint & npm run lint:tslint &",
-    "lint:fix": "npm run lint:eslint-fix & npm run lint:tslint-fix",
-    "lint-staged": "lint-staged"
+    "lint": "npm run lint:eslint & npm run lint:tslint",
+    "lint:fix": "npm run lint:eslint-fix & npm run lint:tslint-fix"
   },
   "devDependencies": {
     "@commitlint/cli": "^8.3.5",
@@ -28,7 +27,6 @@
     "husky": "^4.0.10",
     "lerna": "^3.20.2",
     "lerna-changelog": "^1.0.0",
-    "lint-staged": "^9.5.0",
     "tslint": "^5.20.1",
     "tslint-clean-code": "^0.2.10",
     "tslint-immutable": "^6.0.1",
