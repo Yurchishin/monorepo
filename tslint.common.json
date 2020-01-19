@@ -74,10 +74,7 @@
       "spaces",
       4
     ],
-    "linebreak-style": [
-      true,
-      "LF"
-    ],
+    "linebreak-style": false,
     "max-file-line-count": [
       true,
       300

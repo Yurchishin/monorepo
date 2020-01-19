@@ -12,7 +12,7 @@
     "lint:eslint-fix": "lerna run --parallel lint:eslint-fix",
     "lint:tslint": "lerna run --parallel lint:tslint",
     "lint:tslint-fix": "lerna run --parallel lint:tslint-fix",
-    "lint": "npm run lint:eslint & npm run lint:tslint",
+    "lint": "npm run lint:eslint & npm run lint:tslint &",
     "lint:fix": "npm run lint:eslint-fix & npm run lint:tslint-fix",
     "lint-staged": "lint-staged"
   },
