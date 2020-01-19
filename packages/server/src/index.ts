@@ -1,1 +1,1 @@
-let a = 'asdasd'
+const a = 'asdasd'
