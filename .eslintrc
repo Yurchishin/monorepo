@@ -1,0 +1,16 @@
+{
+  "extends": [
+    "plugin:ramda/recommended",
+    "plugin:import/recommended",
+    "plugin:promise/recommended"
+  ],
+  "parser": "@typescript-eslint/parser",
+  "plugins": [
+    "@typescript-eslint",
+    "ramda",
+    "promise",
+    "import"
+  ],
+  "rules": {
+  }
+}

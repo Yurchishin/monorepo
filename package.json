@@ -1,0 +1,45 @@
+{
+  "name": "@chat/monorepo",
+  "private": true,
+  "scripts": {
+    "release:version": "lerna version --conventional-commits --no-push",
+    "release:patch": "lerna version patch --conventional-commits --no-push",
+    "release:minor": "lerna version minor --conventional-commits --no-push",
+    "release:major": "lerna version major --conventional-commits --no-push",
+    "dependencies:install": "lerna exec --stream npm install",
+    "dependencies:clean": "lerna clean",
+    "lint:eslint": "lerna run --parallel lint:eslint",
+    "lint:eslint-fix": "lerna run --parallel lint:eslint-fix",
+    "lint:tslint": "lerna run --parallel lint:tslint",
+    "lint:tslint-fix": "lerna run --parallel lint:tslint-fix",
+    "lint": "npm run lint:eslint & npm run lint:tslint",
+    "lint:fix": "npm run lint:eslint-fix & npm run lint:tslint-fix",
+    "lint-staged": "lint-staged"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^8.3.5",
+    "@commitlint/config-conventional": "^8.3.4",
+    "@typescript-eslint/eslint-plugin": "^2.16.0",
+    "@typescript-eslint/parser": "^2.16.0",
+    "eslint": "^6.8.0",
+    "eslint-plugin-import": "^2.20.0",
+    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-ramda": "^2.5.1",
+    "husky": "^4.0.10",
+    "lerna": "^3.20.2",
+    "lerna-changelog": "^1.0.0",
+    "lint-staged": "^9.5.0",
+    "tslint": "^5.20.1",
+    "tslint-clean-code": "^0.2.10",
+    "tslint-immutable": "^6.0.1",
+    "tslint-no-circular-imports": "^0.7.0",
+    "typescript": "^3.7.5"
+  },
+  "dependencies": {
+    "@chat/client": "file:packages\\client",
+    "@chat/mst-provider": "file:packages\\mst-provider",
+    "@chat/server": "file:packages\\server",
+    "@chat/types": "file:packages\\types",
+    "@chat/types-io": "file:packages\\types-io"
+  }
+}

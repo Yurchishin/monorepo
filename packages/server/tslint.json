@@ -1,0 +1,9 @@
+{
+  "extends": [
+    "../../tslint.common.json",
+    "rxjs-tslint-rules"
+  ],
+  "rules": {
+
+  }
+}

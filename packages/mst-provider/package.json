@@ -1,0 +1,20 @@
+{
+  "name": "@chat/mst-provider",
+  "version": "0.0.0",
+  "description": "",
+  "keywords": [],
+  "author": "Yurii Rybak <yurarary@gmail.com>",
+  "license": "ISC",
+  "main": "dist/index.js",
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "start": "node dist/index.js",
+    "lint:eslint": "eslint --ext .ts src",
+    "lint:eslint-fix": "eslint --fix --ext .ts src",
+    "lint:tslint": "tslint -c ./tslint.json -p ./tsconfig.json",
+    "lint:tslint-fix": "tslint -c ./tslint.json -p ./tsconfig.json --fix"
+  }
+}

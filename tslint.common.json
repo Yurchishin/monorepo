@@ -1,0 +1,150 @@
+{
+  "defaultSeverity": "error",
+  "extends": [
+    "tslint:all",
+    "tslint-immutable/all",
+    "tslint-clean-code",
+    "tslint-no-circular-imports"
+  ],
+  "rules": {
+    "max-func-args": [
+      true,
+      4
+    ],
+    "prefer-dry-conditionals": true,
+    "newspaper-order": true,
+    "no-circular-imports": true,
+    "readonly-keyword": [
+      true,
+      "ignore-class",
+      "ignore-interface"
+    ],
+    "no-var-keyword": true,
+    "no-parameter-reassignment": true,
+    "typedef": [
+      true,
+      "call-signature",
+      "arrow-call-signature",
+      "parameter",
+      "arrow-parameter",
+      "property-declaration",
+      "variable-declaration-ignore-function"
+    ],
+    "ban-types": [
+      true,
+      [
+        "Object",
+        "Use 'object'."
+      ],
+      [
+        "String",
+        "Use 'string'."
+      ]
+    ],
+    "member-access": [
+      true,
+      "no-public"
+    ],
+    "only-arrow-functions": [
+      true,
+      "allow-named-functions"
+    ],
+    "curly": [
+      true,
+      "ignore-same-line"
+    ],
+    "semicolon": false,
+    "no-submodule-imports": [
+      true,
+      "fp-ts",
+      "io-ts",
+      "io-ts-types"
+    ],
+    "no-this-assignment": [
+      true,
+      {
+        "allowed-names": [
+          "^self$"
+        ]
+      }
+    ],
+    "no-unnecessary-class": true,
+    "indent": [
+      true,
+      "spaces",
+      4
+    ],
+    "linebreak-style": [
+      true,
+      "LF"
+    ],
+    "max-file-line-count": [
+      true,
+      300
+    ],
+    "max-line-length": [
+      true,
+      120
+    ],
+    "no-default-export": false,
+    "no-default-import": false,
+    "object-literal-sort-keys": false,
+    "trailing-comma": true,
+    "arrow-parens": [
+      true,
+      "ban-single-arg-parens"
+    ],
+    "comment-format": [
+      true,
+      "check-space",
+      "check-lowercase",
+      {
+        "ignore-words": [
+          "TODO",
+          "HACK"
+        ]
+      }
+    ],
+    "comment-type": [
+      true,
+      "doc",
+      "singleline",
+      "multiline"
+    ],
+    "file-name-casing": [
+      true,
+      "camel-case",
+      "pascal-case"
+    ],
+    "interface-over-type-literal": false,
+    "no-consecutive-blank-lines": [
+      true,
+      3
+    ],
+    "no-redundant-jsdoc": false,
+    "ordered-imports": false,
+    "prefer-switch": [
+      true,
+      {
+        "min-cases": 4
+      }
+    ],
+    "quotemark": [
+      true,
+      "single",
+      "jsx-double"
+    ],
+    "space-within-parens": [true, 0],
+    "whitespace": [
+      true,
+      "check-branch",
+      "check-operator",
+      "check-module",
+      "check-rest-spread",
+      "check-typecast",
+      "check-type",
+      "check-type-operator"
+    ],
+    "no-use-before-declare": false
+  }
+}

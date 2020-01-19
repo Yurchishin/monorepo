@@ -1,0 +1,30 @@
+{
+  "compilerOptions": {
+    "outDir": "./dist",
+    "esModuleInterop": true,
+    "noStrictGenericChecks": true,
+    "keyofStringsOnly": true,
+    "locale": "ru",
+    "moduleResolution": "node",
+    "newLine": "lf",
+    "noImplicitAny": true,
+    "noImplicitReturns": true,
+    "noImplicitThis": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "preserveConstEnums": true,
+    "removeComments": true,
+    "resolveJsonModule": true,
+    "strict": true,
+    "strictBindCallApply": true,
+    "strictFunctionTypes": true,
+    "strictPropertyInitialization": true,
+    "strictNullChecks": true
+  },
+  "include": [
+    "packages"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
+}
