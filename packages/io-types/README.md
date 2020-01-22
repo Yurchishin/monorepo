@@ -1,11 +1,11 @@
-# `constants`
+# `io-types`
 
 > TODO: description
 
 ## Usage
 
 ```
-const constants = require('constants');
+const constants = require('@monorepo/io-types');
 
 // TODO: DEMONSTRATE API
 ```

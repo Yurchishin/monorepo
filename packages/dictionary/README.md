@@ -1,11 +1,11 @@
-# `constants`
+# `dictionary`
 
 > TODO: description
 
 ## Usage
 
 ```
-const constants = require('constants');
+const constants = require('monorepo/dictionary');
 
 // TODO: DEMONSTRATE API
 ```
