@@ -1,11 +1,11 @@
-# `@chat/server`
+# `@monorepo/server`
 
 > TODO: description
 
 ## Usage
 
 ```
-const server = require('@chat/server');
+const server = require('@monorepo/server');
 
 // TODO: DEMONSTRATE API
 ```

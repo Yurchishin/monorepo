@@ -1,11 +1,11 @@
-# `@chat/client`
+# `constants`
 
 > TODO: description
 
 ## Usage
 
 ```
-const client = require('@chat/client');
+const constants = require('constants');
 
 // TODO: DEMONSTRATE API
 ```

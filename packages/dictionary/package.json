@@ -1,20 +1,31 @@
 {
-  "name": "@chat/client",
+  "name": "@monorepo/dictionary",
   "version": "0.0.0",
   "description": "",
   "keywords": [],
   "author": "Yurii Rybak <yurarary@gmail.com>",
   "license": "ISC",
   "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "publishConfig": {
     "access": "public"
   },
   "scripts": {
     "build": "tsc -p tsconfig.json",
+    "watch": "tsc -p tsconfig.json --watch",
     "start": "node dist/index.js",
+    "start:build": "npm run build & npm run start",
+    "lint": "npm run lint:eslint npm run lint:tslint",
+    "lint:fix": "npm run lint:eslint-fix npm run lint:tslint-fix",
     "lint:eslint": "eslint --ext .ts src",
     "lint:eslint-fix": "eslint --fix --ext .ts src",
     "lint:tslint": "tslint -c ./tslint.json -p ./tsconfig.json",
     "lint:tslint-fix": "tslint -c ./tslint.json -p ./tsconfig.json --fix"
+  },
+  "devDependencies": {
+    "typescript": "^3.7.5"
+  },
+  "dependencies": {
+    "@types/node": "^13.1.8"
   }
 }

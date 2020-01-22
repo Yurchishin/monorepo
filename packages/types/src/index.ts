@@ -1,1 +1,1 @@
-const a = 'asdasd'
+export * from 'utility-types'

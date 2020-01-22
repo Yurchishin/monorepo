@@ -1,11 +1,11 @@
-# `@chat/types-io`
+# `constants`
 
 > TODO: description
 
 ## Usage
 
 ```
-const typesIo = require('@chat/types-io');
+const constants = require('constants');
 
 // TODO: DEMONSTRATE API
 ```

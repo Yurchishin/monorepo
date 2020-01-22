@@ -1,0 +1,14 @@
+{
+  "extends": [
+    "../../tslint.common.json"
+  ],
+  "linterOptions": {
+    "exclude": [
+      "node_modules/*",
+      "dist/*"
+    ]
+  },
+  "rules": {
+
+  }
+}

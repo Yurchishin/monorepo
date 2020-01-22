@@ -23,10 +23,6 @@
     "no-parameter-reassignment": true,
     "typedef": [
       true,
-      "call-signature",
-      "arrow-call-signature",
-      "parameter",
-      "arrow-parameter",
       "property-declaration",
       "variable-declaration-ignore-function"
     ],
@@ -53,12 +49,16 @@
       true,
       "ignore-same-line"
     ],
-    "semicolon": false,
+    "semicolon": [
+      true,
+      "never"
+    ],
     "no-submodule-imports": [
       true,
       "fp-ts",
       "io-ts",
-      "io-ts-types"
+      "io-ts-types",
+      "module-alias"
     ],
     "no-this-assignment": [
       true,
@@ -131,7 +131,10 @@
       "single",
       "jsx-double"
     ],
-    "space-within-parens": [true, 0],
+    "space-within-parens": [
+      true,
+      0
+    ],
     "whitespace": [
       true,
       "check-branch",
@@ -142,6 +145,24 @@
       "check-type",
       "check-type-operator"
     ],
-    "no-use-before-declare": false
+    "no-use-before-declare": false,
+    "no-expression-statement": [
+      true,
+      {
+        "ignore-prefix": [
+          "await"
+        ]
+      }
+    ],
+    "variable-name": [
+      true,
+      "ban-keywords",
+      "allow-pascal-case",
+      "check-format"
+    ],
+    "no-implicit-dependencies": false,
+    "member-ordering": false,
+    "align": false,
+    "completed-docs": false
   }
 }

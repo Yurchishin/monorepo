@@ -1,23 +1,57 @@
 {
-  "name": "@chat/server",
+  "name": "@monorepo/server",
   "version": "0.0.0",
   "description": "",
   "keywords": [],
   "author": "Yurii Rybak <yurarary@gmail.com>",
   "license": "ISC",
   "main": "dist/index.js",
+  "private": true,
   "publishConfig": {
     "access": "public"
   },
   "scripts": {
     "build": "tsc -p tsconfig.json",
-    "start": "node dist/index.js",
+    "watch": "nodemon",
+    "start": "node -r ./tsconfig-paths.js dist/index.js",
+    "start:dev": "env-cmd -f ./.env.dev npm run start",
+    "start:prod": "env-cmd -f ./.env.prod npm run start",
+    "start:build-dev": "npm run build & npm run start:dev",
+    "start:build-prod": "npm run build & npm run start:prod",
+    "lint": "npm run lint:eslint npm run lint:tslint",
+    "lint:fix": "npm run lint:eslint-fix npm run lint:tslint-fix",
     "lint:eslint": "eslint --ext .ts src",
     "lint:eslint-fix": "eslint --fix --ext .ts src",
     "lint:tslint": "tslint -c ./tslint.json -p ./tsconfig.json",
     "lint:tslint-fix": "tslint -c ./tslint.json -p ./tsconfig.json --fix"
   },
+  "dependencies": {
+    "@marblejs/core": "^2.3.1",
+    "@marblejs/middleware-body": "^2.3.1",
+    "@marblejs/middleware-cors": "^2.3.1",
+    "@marblejs/middleware-io": "^2.3.1",
+    "@marblejs/middleware-jwt": "^2.3.1",
+    "@marblejs/middleware-logger": "^2.3.1",
+    "@monorepo/dictionary": "0.0.0",
+    "@monorepo/io-types": "0.0.0",
+    "@monorepo/types": "0.0.0",
+    "env-cmd": "^10.0.1",
+    "faker": "^4.1.0",
+    "fp-ts": "^2.4.1",
+    "monocle-ts": "^2.0.1",
+    "pg": "^7.17.1",
+    "ramda": "^0.26.1",
+    "reflect-metadata": "^0.1.13",
+    "rxjs": "^6.5.4",
+    "typeorm": "^0.2.22"
+  },
   "devDependencies": {
-    "rxjs-tslint-rules": "^4.28.1"
+    "@types/faker": "^4.1.9",
+    "@types/node": "^13.1.8",
+    "@types/ramda": "^0.26.39",
+    "nodemon": "^2.0.2",
+    "rxjs-tslint-rules": "^4.28.1",
+    "ts-node": "^8.6.2",
+    "tsconfig-paths": "^3.9.0"
   }
 }

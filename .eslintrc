@@ -12,5 +12,6 @@
     "import"
   ],
   "rules": {
+    "import/no-unresolved": 0
   }
 }
