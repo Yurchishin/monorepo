@@ -1,24 +1,17 @@
-//import { createServer, IncomingMessage, ServerResponse } from 'http'
-//import chalk from 'chalk'
-//
-//export namespace Server {
-//    const { host, port } = Config.server
-//
-//    const onListen = (): void => {
-//        console.info('[server] running', `@ http://${host}:${port}/`)
-//    }
-//
-//    const onClose = (): void => {
-//        console.info(`[server] stopped`)
-//    }
-//
-//    const onError = (error: Error): void => {
-//        console.error('[server] errored', error.message)
-//    }
-//
-//    export const create = async (app: (req: IncomingMessage, res: ServerResponse) => void) =>
-//        createServer(app)
-//            .listen(port, onListen)
-//            .on('close', onClose)
-//            .on('error', onError)
-//}
+import { warn, info, error } from 'fp-ts/lib/Console'
+import { createServer, RequestListener } from 'http'
+import chalk from 'chalk'
+import { ProcessEnv } from '@io-types'
+
+const onListen = (env: ProcessEnv) => info(`${chalk.green('[server] running')} @ http://${env.HOST}:${env.PORT}/`)
+
+const onClose = warn(chalk.green(`[server] stopped`))
+
+const onError = (e: Error) => error(chalk.red('[server] errored') + e.message)()
+
+export const Server = {
+    create: (app: RequestListener, env: ProcessEnv) =>  createServer(app)
+        .listen(env.PORT, onListen(env))
+        .on('close', onClose)
+        .on('error', onError)
+}

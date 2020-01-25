@@ -1,3 +1,3 @@
-export enum Hosts {
+export enum Host {
     LOCALHOST = 'localhost'
 }

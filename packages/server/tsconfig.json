@@ -6,6 +6,7 @@
     "outDir": "./dist",
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
+    "strictPropertyInitialization": false,
     "module": "commonjs",
     "target": "es2017",
     "lib": [
@@ -15,6 +16,7 @@
       "@config": ["config"],
       "@connection": ["connection"],
       "@dictionary": ["dictionary"],
+      "@effects": ["effects"],
       "@entity": ["entity"],
       "@migration": ["migration"],
       "@io-types": ["io-types"]

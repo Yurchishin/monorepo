@@ -12,6 +12,7 @@
     "import"
   ],
   "rules": {
-    "import/no-unresolved": 0
+    "import/no-unresolved": 0,
+    "comma-dangle": ["error", "always-multiline"]
   }
 }

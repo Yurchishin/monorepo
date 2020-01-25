@@ -1,43 +1,42 @@
 import t, { TypeOf } from '@monorepo/io-types'
 import { NodeEnv } from '@monorepo/dictionary'
 import {
-    TypeormConnectionIO,
-    TypeormHostIO,
-    TypeormUsernameIO,
-    TypeormPasswordIO,
-    TypeormDatabaseIO,
-    TypeormPortIO,
-    TypeormMigrationsRunIO,
-    TypeormSynchronizeIO,
-    TypeormLoggingIO,
-    TypeormEntitiesIO,
-    TypeormMigrationsIO,
-    TypeormEntitiesDirIO,
-    TypeormMigrationsDirIO,
+    typeormConnection,
+    typeormUsername,
+    typeormPassword,
+    typeormDatabase,
+    typeormPort,
+    typeormMigrationsRun,
+    typeormSynchronize,
+    typeormLogging,
+    typeormEntities,
+    typeormMigrations,
+    typeormEntitiesDir,
+    typeormMigrationsDir,
 } from './Typeorm'
 
-export const NodeEnvIO = t.union([
+export const nodeEnv = t.union([
     t.literal(NodeEnv.PROD),
     t.literal(NodeEnv.DEV),
-], 'NodeEnv')
+], 'nodeEnv')
 
-export type TNodeEnv = TypeOf<typeof NodeEnvIO>
+export const processEnv = t.type({
+    PORT: t.intFromString,
+    HOST: t.host,
+    NODE_ENV: nodeEnv,
+    TYPEORM_CONNECTION: typeormConnection,
+    TYPEORM_HOST: t.localhost,
+    TYPEORM_USERNAME: typeormUsername,
+    TYPEORM_PASSWORD: typeormPassword,
+    TYPEORM_DATABASE: typeormDatabase,
+    TYPEORM_PORT: typeormPort,
+    TYPEORM_MIGRATIONS_RUN: typeormMigrationsRun,
+    TYPEORM_SYNCHRONIZE: typeormSynchronize,
+    TYPEORM_LOGGING: typeormLogging,
+    TYPEORM_ENTITIES: typeormEntities,
+    TYPEORM_MIGRATIONS: typeormMigrations,
+    TYPEORM_ENTITIES_DIR: typeormEntitiesDir,
+    TYPEORM_MIGRATIONS_DIR: typeormMigrationsDir,
+}, 'processEnv')
 
-export const ProcessEnvIO = t.type({
-    NODE_ENV: NodeEnvIO,
-    TYPEORM_CONNECTION: TypeormConnectionIO,
-    TYPEORM_HOST: TypeormHostIO,
-    TYPEORM_USERNAME: TypeormUsernameIO,
-    TYPEORM_PASSWORD: TypeormPasswordIO,
-    TYPEORM_DATABASE: TypeormDatabaseIO,
-    TYPEORM_PORT: TypeormPortIO,
-    TYPEORM_MIGRATIONS_RUN: TypeormMigrationsRunIO,
-    TYPEORM_SYNCHRONIZE: TypeormSynchronizeIO,
-    TYPEORM_LOGGING: TypeormLoggingIO,
-    TYPEORM_ENTITIES: TypeormEntitiesIO,
-    TYPEORM_MIGRATIONS: TypeormMigrationsIO,
-    TYPEORM_ENTITIES_DIR: TypeormEntitiesDirIO,
-    TYPEORM_MIGRATIONS_DIR: TypeormMigrationsDirIO,
-}, 'ProcessEnv')
-
-export type TProcessEnv = TypeOf<typeof ProcessEnvIO>
+export type ProcessEnv = TypeOf<typeof processEnv>

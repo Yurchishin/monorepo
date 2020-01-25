@@ -9,6 +9,6 @@
   "watch": [
     "src"
   ],
-  "exec": "npm run start:dev",
+  "exec": "npm run start:build-dev",
   "ext": "ts"
 }

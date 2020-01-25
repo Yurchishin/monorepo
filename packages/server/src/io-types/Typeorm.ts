@@ -1,5 +1,4 @@
 import t from '@monorepo/io-types'
-import { Hosts } from '@monorepo/dictionary'
 import {
     TYPEORM_CONNECTION,
     TYPEORM_ENTITIES,
@@ -7,29 +6,27 @@ import {
     TYPEORM_MIGRATIONS, TYPEORM_MIGRATIONS_DIR
 } from '@dictionary'
 
-export const TypeormConnectionIO = t.literal(TYPEORM_CONNECTION, 'TypeormConnection')
+export const typeormConnection = t.literal(TYPEORM_CONNECTION, 'typeormConnection')
 
-export const TypeormHostIO = t.literal(Hosts.LOCALHOST, 'TypeormHost')
+export const typeormUsername = t.string
 
-export const TypeormUsernameIO = t.string
+export const typeormPassword = t.string
 
-export const TypeormPasswordIO = t.string
+export const typeormDatabase = t.string
 
-export const TypeormDatabaseIO = t.string
+export const typeormPort = t.intFromString
 
-export const TypeormPortIO = t.intFromString
+export const typeormMigrationsRun = t.booleanFromString
 
-export const TypeormMigrationsRunIO = t.booleanFromString
+export const typeormSynchronize = t.booleanFromString
 
-export const TypeormSynchronizeIO = t.booleanFromString
+export const typeormLogging = t.booleanFromString
 
-export const TypeormLoggingIO = t.booleanFromString
+export const typeormEntities = t.literal(TYPEORM_ENTITIES, 'typeormEntities')
 
-export const TypeormEntitiesIO = t.literal(TYPEORM_ENTITIES, 'TypeormEntities')
+export const typeormMigrations = t.literal(TYPEORM_MIGRATIONS, 'typeormMigrations')
 
-export const TypeormMigrationsIO = t.literal(TYPEORM_MIGRATIONS, 'TypeormMigrations')
+export const typeormEntitiesDir = t.literal(TYPEORM_ENTITIES_DIR, 'typeormEntitiesDir')
 
-export const TypeormEntitiesDirIO = t.literal(TYPEORM_ENTITIES_DIR, 'TypeormEntitiesDir')
-
-export const TypeormMigrationsDirIO = t.literal(TYPEORM_MIGRATIONS_DIR, 'TypeormMigrationsDir')
+export const typeormMigrationsDir = t.literal(TYPEORM_MIGRATIONS_DIR, 'typeormMigrationsDir')
 

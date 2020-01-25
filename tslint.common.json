@@ -55,10 +55,10 @@
     ],
     "no-submodule-imports": [
       true,
+      "rx-js",
       "fp-ts",
       "io-ts",
-      "io-ts-types",
-      "module-alias"
+      "io-ts-types"
     ],
     "no-this-assignment": [
       true,
@@ -163,6 +163,8 @@
     "no-implicit-dependencies": false,
     "member-ordering": false,
     "align": false,
-    "completed-docs": false
+    "completed-docs": false,
+    "readonly-array": false,
+    "no-shadowed-variable": false
   }
 }
