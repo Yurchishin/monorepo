@@ -7,11 +7,11 @@ import {
     JoinColumn,
     ManyToOne,
 } from 'typeorm'
-import { UserRole } from '@monorepo/dictionary'
-import { Role } from './Role'
+import RoleEntity from '../role/role.entity'
+import { TUserType } from '@monorepo/io-types'
 
 @Entity()
-export class User {
+class UserEntity {
     @PrimaryGeneratedColumn()
     id: number
 
@@ -30,13 +30,17 @@ export class User {
         type: 'varchar',
         nullable: false,
     })
-    name: string
+    nickname: string
 
     @Column({
         type: 'varchar',
-        nullable: false,
     })
-    surname: string
+    name?: string
+
+    @Column({
+        type: 'varchar',
+    })
+    surname?: string
 
     @Column({
         type: 'varchar',
@@ -45,11 +49,11 @@ export class User {
     password: string
 
     @ManyToOne(
-        () => Role,
+        () => RoleEntity,
         role => role.name,
     )
     @JoinColumn({ name: 'role' })
-    role: UserRole
+    role: TUserType
 
     @CreateDateColumn({
         name: 'createdAt',
@@ -63,3 +67,5 @@ export class User {
     })
     updatedAt: Date
 }
+
+export default UserEntity

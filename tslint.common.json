@@ -55,7 +55,6 @@
     ],
     "no-submodule-imports": [
       true,
-      "rx-js",
       "fp-ts",
       "io-ts",
       "io-ts-types"

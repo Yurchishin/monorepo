@@ -5,10 +5,17 @@
   "linterOptions": {
     "exclude": [
       "node_modules/*",
-      "dist/*"
+      "dist/*",
+      "src/**/*.spec.ts"
     ]
   },
   "rules": {
-
+    "no-submodule-imports": [
+      true,
+      "validator",
+      "fp-ts",
+      "io-ts",
+      "io-ts-types"
+    ]
   }
 }

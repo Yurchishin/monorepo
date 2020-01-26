@@ -1,10 +1,10 @@
-import * as processEnv from './ProcessEnv'
-import * as typeorm from './Typeorm'
+export * from './Config'
+export { default as tConfig } from './Config'
 
-export * from './ProcessEnv'
-export * from './Typeorm'
+import { default as config } from './Config'
 
-export default {
-    ...processEnv,
-    ...typeorm,
+const t = {
+    config,
 }
+
+export default t

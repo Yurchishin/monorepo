@@ -3,17 +3,18 @@ import {
     Entity,
     OneToMany,
     CreateDateColumn,
-    UpdateDateColumn, PrimaryGeneratedColumn,
+    UpdateDateColumn,
+    PrimaryGeneratedColumn,
 } from 'typeorm'
 import { UserRole } from '@monorepo/dictionary'
-import { User } from './User'
+import UserEntity from '../user/user.entity'
 
 @Entity()
-export class Role {
+class RoleEntity {
     @PrimaryGeneratedColumn()
     id: number
 
-    @OneToMany(() => User, user => user.role)
+    @OneToMany(() => UserEntity, user => user.role)
     @Column('enum', {
         name: 'name',
         enum: UserRole,
@@ -34,3 +35,5 @@ export class Role {
     })
     updatedAt: Date
 }
+
+export default RoleEntity

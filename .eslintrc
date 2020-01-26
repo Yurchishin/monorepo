@@ -2,15 +2,21 @@
   "extends": [
     "plugin:ramda/recommended",
     "plugin:import/recommended",
-    "plugin:promise/recommended"
+    "plugin:promise/recommended",
+    "plugin:jest/recommended",
+    "plugin:jest/style"
   ],
   "parser": "@typescript-eslint/parser",
   "plugins": [
     "@typescript-eslint",
     "ramda",
     "promise",
-    "import"
+    "import",
+    "jest"
   ],
+  "env": {
+    "jest/globals": true
+  },
   "rules": {
     "import/no-unresolved": 0,
     "comma-dangle": ["error", "always-multiline"]

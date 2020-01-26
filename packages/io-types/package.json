@@ -15,6 +15,9 @@
     "watch": "tsc -p tsconfig.json --watch",
     "start": "node dist/index.js",
     "start:build": "npm run build & npm run start",
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "test:coverage": "jest --coverage",
     "lint": "npm run lint:eslint npm run lint:tslint",
     "lint:fix": "npm run lint:eslint-fix npm run lint:tslint-fix",
     "lint:eslint": "eslint --ext .ts src",
@@ -26,16 +29,22 @@
     "@monorepo/dictionary": "^0.0.1",
     "io-ts": "^2.0.5",
     "io-ts-types": "^0.5.5",
-    "utility-types": "^3.10.0"
+    "ts-jest": "^25.0.0",
+    "utility-types": "^3.10.0",
+    "validator": "^12.2.0",
+    "newtype-ts": "^0.3.2"
   },
   "peerDependencies": {
     "fp-ts": "^2.0.0",
-    "monocle-ts": "^2.0.0",
-    "newtype-ts": "^0.3.2"
+    "monocle-ts": "^2.0.0"
   },
   "devDependencies": {
+    "@types/jest": "^24.9.1",
     "@types/node": "^13.1.8",
+    "@types/validator": "^12.0.1",
+    "assert": "^2.0.0",
     "fp-ts": "^2.0.0",
+    "jest": "^25.1.0",
     "monocle-ts": "^2.0.0",
     "newtype-ts": "^0.3.2",
     "typescript": "^3.7.5"

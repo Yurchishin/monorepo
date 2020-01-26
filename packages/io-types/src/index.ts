@@ -1,21 +1,19 @@
-import * as IO from 'io-ts'
-import { IntFromString as intFromString } from 'io-ts-types/lib/IntFromString'
-import { BooleanFromString as booleanFromString } from 'io-ts-types/lib/BooleanFromString'
-import { localhost, host, guestRole, adminRole, userRole } from './io-types'
-
-export const t = {
-    ...IO,
-    intFromString,
-    booleanFromString,
-    localhost,
-    host,
-    guestRole,
-    adminRole,
-    userRole,
-}
+export * from './brands'
+export * from './types'
+export * from './io-types/Config'
+export { default as tConfig } from './io-types/Config'
+export * from './io-types/User'
+export { default as tUser } from './io-types/User'
 
 export { TypeOf, Errors } from 'io-ts'
 export { PathReporter } from 'io-ts/lib/PathReporter'
-export * from './types'
 
-export default t
+import * as IO from 'io-ts'
+import { IntFromString as intFromString } from 'io-ts-types/lib/IntFromString'
+import { BooleanFromString as booleanFromString } from 'io-ts-types/lib/BooleanFromString'
+
+export default {
+    ...IO,
+    intFromString,
+    booleanFromString,
+}

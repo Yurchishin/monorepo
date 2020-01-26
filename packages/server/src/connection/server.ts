@@ -13,5 +13,5 @@ export const Server = {
     create: (app: RequestListener, env: ProcessEnv) =>  createServer(app)
         .listen(env.PORT, onListen(env))
         .on('close', onClose)
-        .on('error', onError)
+        .on('error', onError),
 }
