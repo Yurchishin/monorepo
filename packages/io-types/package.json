@@ -1,6 +1,6 @@
 {
   "name": "@monorepo/io-types",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "",
   "keywords": [],
   "author": "Yurii Rybak <yurarary@gmail.com>",
@@ -26,13 +26,13 @@
     "lint:tslint-fix": "tslint -c ./tslint.json -p ./tsconfig.json --fix"
   },
   "dependencies": {
-    "@monorepo/dictionary": "^0.0.1",
+    "@monorepo/dictionary": "^0.0.2",
     "io-ts": "^2.0.5",
     "io-ts-types": "^0.5.5",
+    "newtype-ts": "^0.3.2",
     "ts-jest": "^25.0.0",
     "utility-types": "^3.10.0",
-    "validator": "^12.2.0",
-    "newtype-ts": "^0.3.2"
+    "validator": "^12.2.0"
   },
   "peerDependencies": {
     "fp-ts": "^2.0.0",
