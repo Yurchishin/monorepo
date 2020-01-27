@@ -1,5 +1,5 @@
 import {userNickname} from './UserNickname'
-import {assertSuccess, assertFailure, assertSuccessMessage} from "../../utils"
+import {assertSuccess, assertFailureMessage} from "../../utils"
 import { UserNicknameError } from "@monorepo/dictionary";
 
 describe('userNickname', () => {
@@ -15,26 +15,20 @@ describe('userNickname', () => {
 		assertSuccess(userNickname, 'yury12')
 	})
 
-	it('left decode (\'yury\')', () => {
-		assertFailure(userNickname, 'yury', 1)
-	})
-
 	it('left decode (\'yuryyuryyuryyuryyuryyury\')', () => {
-		assertFailure(userNickname, 'yuryyuryyuryyuryyuryyury', 1)
+		assertFailureMessage(userNickname, 'yuryyuryyuryyuryyuryyury', [
+			UserNicknameError.MAX_LENGTH,
+		])
 	})
 
-	it('left decode (1)', () => {
-		assertFailure(userNickname, 1, 4)
-	})
-
-	it('left decode error message (\'yury\')', () => {
-		assertSuccessMessage(userNickname, 'yury', [
+	it('left decode (\'yury\')', () => {
+		assertFailureMessage(userNickname, 'yury', [
 			UserNicknameError.MIN_LENGTH,
 		])
 	})
 
-	it('left decode error message (1)', () => {
-		assertSuccessMessage(userNickname, 1, [
+	it('left decode (1)', () => {
+		assertFailureMessage(userNickname, 1, [
 			UserNicknameError.TYPE,
 			UserNicknameError.MAX_LENGTH,
 			UserNicknameError.MIN_LENGTH,

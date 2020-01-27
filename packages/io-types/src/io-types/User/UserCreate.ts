@@ -7,7 +7,7 @@ import { userPassword } from './UserPassword'
 import { userRole } from './UserRole'
 import { userSurname } from './UserSurname'
 
-export const user = t.type({
+export const userCreate = t.type({
     age: userAge,
     email: userEmail,
     nickname: userNickname,
@@ -15,4 +15,5 @@ export const user = t.type({
     role: userRole,
     name: userName,
     surname: userSurname,
-}, 'host')
+}, 'UserCreate')
+

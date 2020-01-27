@@ -5,6 +5,4 @@ const tConfig = {
     host,
 }
 
-export * from './Host'
-
 export default tConfig

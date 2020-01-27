@@ -9,7 +9,9 @@ import {
 import { UserRole } from '@monorepo/dictionary'
 import UserEntity from '../user/user.entity'
 
-@Entity()
+@Entity({
+    name: 'role',
+})
 class RoleEntity {
     @PrimaryGeneratedColumn()
     id: number

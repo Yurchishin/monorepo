@@ -11,7 +11,6 @@ import httpListener from './app'
 
 const bootstrap = async (env: ProcessEnv) => {
     createConnection()
-        .then(v => console.log('a', v))
         .catch(error => console.log('b', error))
 //    await Server.create(httpListener.run(createContext()), env)
 }

@@ -1,5 +1,5 @@
 import {userName} from './UserName'
-import {assertSuccess, assertFailure, assertSuccessMessage} from "../../utils"
+import {assertSuccess, assertFailureMessage} from "../../utils"
 import { UserNameError } from "@monorepo/dictionary";
 
 describe('userName', () => {
@@ -7,34 +7,37 @@ describe('userName', () => {
 		assertSuccess(userName, 'Yura')
 	})
 
+	it('right decode (undefined)', () => {
+		assertSuccess(userName, undefined)
+	})
+
 	it('left decode (\'Yu\')', () => {
-		assertFailure(userName, 'Yu', 1)
-	})
-
-	it('left decode (\'YuraYuraYuraYuraYuraYura\')', () => {
-		assertFailure(userName, 'YuraYuraYuraYuraYuraYura', 1)
-	})
-
-	it('left decode (\'Yura1\')', () => {
-		assertFailure(userName, 'Yura1', 1)
-	})
-
-	it('left decode (1)', () => {
-		assertFailure(userName, 1, 4)
-	})
-
-	it('left decode error message (\'Yura1\')', () => {
-		assertSuccessMessage(userName, 'Yura1', [
-			UserNameError.REG_EXP,
+		assertFailureMessage(userName, 'Yu', [
+			UserNameError.MIN_LENGTH,
+			UserNameError.TYPE,
 		])
 	})
 
-	it('left decode error message (1)', () => {
-		assertSuccessMessage(userName, 1, [
-			UserNameError.TYPE,
+	it('left decode (\'YuraYuraYuraYuraYuraYura\')', () => {
+		assertFailureMessage(userName, 'YuraYuraYuraYuraYuraYura', [
 			UserNameError.MAX_LENGTH,
-			UserNameError.MIN_LENGTH,
+			UserNameError.TYPE,
+		])
+	})
+
+	it('left decode (\'Yura1\')', () => {
+		assertFailureMessage(userName, 'Yura1', [
 			UserNameError.REG_EXP,
+			UserNameError.TYPE,
+		])
+	})
+
+	it('left decode (1)', () => {
+		assertFailureMessage(userName, 1, [
+			UserNameError.MIN_LENGTH,
+			UserNameError.MAX_LENGTH,
+			UserNameError.REG_EXP,
+			UserNameError.TYPE,
 		])
 	})
 })

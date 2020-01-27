@@ -63,7 +63,7 @@ export function assertFailure(codec: t.Any, value: unknown, errorsLength: number
     )
 }
 
-export function assertSuccessMessage(codec: t.Any, value: unknown, messages: string[]): void {
+export function assertFailureMessage(codec: t.Any, value: unknown, messages: string[]): void {
     const result = codec.decode(value)
     pipe(
         result,

@@ -10,7 +10,9 @@ import {
 import RoleEntity from '../role/role.entity'
 import { TUserType } from '@monorepo/io-types'
 
-@Entity()
+@Entity({
+    name: 'user',
+})
 class UserEntity {
     @PrimaryGeneratedColumn()
     id: number

@@ -17,5 +17,3 @@ export const userEmail: IUserEmailC = new t.Type<string>(
         ),
     t.identity,
 )
-
-export type TUserEmail = t.TypeOf<typeof userEmail>

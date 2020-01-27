@@ -1,11 +1,14 @@
 import * as t from 'io-ts'
 import { UserNameError, UserNameRange, UserNameRegExp } from '@monorepo/dictionary'
 import { withMessage } from 'io-ts-types/lib/withMessage'
-import { stringGreaterThenOrEqual, stringLessThenOrEqual, stringRegExp } from '../../brands/String'
+import tString from '../String'
 
-export const userName = t.intersection([
-        withMessage(t.string, () => UserNameError.TYPE),
-        withMessage(stringLessThenOrEqual(UserNameRange.MAX), () => UserNameError.MAX_LENGTH),
-        withMessage(stringGreaterThenOrEqual(UserNameRange.MIN), () => UserNameError.MIN_LENGTH),
-        withMessage(stringRegExp(new RegExp(UserNameRegExp)), () => UserNameError.REG_EXP),
-], 'UserName')
+const tName = t.intersection([
+        withMessage(tString.greaterThenOrEqual(UserNameRange.MIN), () => UserNameError.MIN_LENGTH),
+        withMessage(tString.lessThenOrEqual(UserNameRange.MAX), () => UserNameError.MAX_LENGTH),
+        withMessage(tString.regExp(new RegExp(UserNameRegExp)), () => UserNameError.REG_EXP),
+], 'UserName!')
+
+const tUndefined = withMessage(t.undefined, () => UserNameError.TYPE)
+
+export const userName = t.union([tName, tUndefined], 'UserName')

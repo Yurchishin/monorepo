@@ -1,3 +1,4 @@
+import { userCreate } from './UserCreate'
 import { userAge } from './UserAge'
 import { userEmail } from './UserEmail'
 import { userName } from './UserName'
@@ -7,21 +8,18 @@ import { userRole, adminRole, guestRole } from './UserRole'
 import { userSurname } from './UserSurname'
 
 const tUser = {
-    userAge,
-    userEmail,
-    userName,
-    userNickname,
-    userPassword,
-    userRole,
+    age: userAge,
+    email: userEmail,
+    name: userName,
+    nickname: userNickname,
+    password: userPassword,
+    role: userRole,
+    surname: userSurname,
+    create: userCreate,
     adminRole,
     guestRole,
-    userSurname,
 }
 
-export * from './UserAge'
-export * from './UserEmail'
-export * from './UserName'
-export * from './UserNickname'
 export * from './UserPassword'
 export * from './UserRole'
 export * from './UserSurname'
