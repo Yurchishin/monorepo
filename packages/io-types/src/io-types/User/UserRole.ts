@@ -7,5 +7,3 @@ export const adminRole = withMessage(t.literal(UserRole.ADMIN, 'Admin'), () => U
 export const guestRole = withMessage(t.literal(UserRole.GUEST, 'Guest'), () => UserRoleError.TYPE)
 
 export const userRole = withMessage(t.union([adminRole, guestRole], 'UserRole'), () => UserRoleError.TYPE)
-
-export type TUserType = t.TypeOf<typeof userRole>

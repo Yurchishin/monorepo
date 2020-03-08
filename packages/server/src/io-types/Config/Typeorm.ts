@@ -1,29 +1,29 @@
-import t from '@monorepo/io-types'
+import { tTypes, tNumber, tBoolean } from '@monorepo/io-types'
 import {
     TYPEORM_CONNECTION,
     TYPEORM_ENTITIES,
     TYPEORM_MIGRATIONS,
 } from '@dictionary'
 
-const typeormConnection = t.literal(TYPEORM_CONNECTION, 'TypeormConnection')
+const typeormConnection = tTypes.literal(TYPEORM_CONNECTION, 'TypeormConnection')
 
-const typeormUsername = t.string
+const typeormUsername = tTypes.string
 
-const typeormPassword = t.string
+const typeormPassword = tTypes.string
 
-const typeormDatabase = t.string
+const typeormDatabase = tTypes.string
 
-const typeormPort = t.intFromString
+const typeormPort = tNumber.intFromString
 
-const typeormMigrationsRun = t.booleanFromString
+const typeormMigrationsRun = tBoolean.booleanFromString
 
-const typeormSynchronize = t.booleanFromString
+const typeormSynchronize = tBoolean.booleanFromString
 
-const typeormLogging = t.booleanFromString
+const typeormLogging = tBoolean.booleanFromString
 
-const typeormEntities = t.literal(TYPEORM_ENTITIES, 'TypeormEntities')
+const typeormEntities = tTypes.literal(TYPEORM_ENTITIES, 'TypeormEntities')
 
-const typeormMigrations = t.literal(TYPEORM_MIGRATIONS, 'TypeormMigrations')
+const typeormMigrations = tTypes.literal(TYPEORM_MIGRATIONS, 'TypeormMigrations')
 
 
 export const tTypeorm = {

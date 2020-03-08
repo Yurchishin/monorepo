@@ -5,11 +5,12 @@ import { pipe } from 'fp-ts/lib/pipeable'
 import { error } from 'fp-ts/lib/Console'
 import * as E from 'fp-ts/lib/Either'
 import * as T from 'fp-ts/lib/Task'
-import { tConfig, ProcessEnv } from '@io-types'
+import { tBEConfig } from '@io-types'
+import { ProcessEnvIO } from '@types'
 import { Server } from '@connection'
 import httpListener from './app'
 
-const bootstrap = async (env: ProcessEnv) => {
+const bootstrap = async (env: ProcessEnvIO) => {
     createConnection()
         .catch(error => console.log('b', error))
 //    await Server.create(httpListener.run(createContext()), env)
@@ -17,7 +18,7 @@ const bootstrap = async (env: ProcessEnv) => {
 
 export const run = (env: unknown) => pipe(
     env,
-    tConfig.processEnv.decode,
+    tBEConfig.processEnv.decode,
     either => pipe(
         either,
         E.fold(

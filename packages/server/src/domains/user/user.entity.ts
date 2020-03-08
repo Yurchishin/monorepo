@@ -8,7 +8,7 @@ import {
     ManyToOne,
 } from 'typeorm'
 import RoleEntity from '../role/role.entity'
-import { TUserType } from '@monorepo/io-types'
+import { UserRoleIO } from '@monorepo/io-types'
 
 @Entity({
     name: 'user',
@@ -55,7 +55,7 @@ class UserEntity {
         role => role.name,
     )
     @JoinColumn({ name: 'role' })
-    role: TUserType
+    role: UserRoleIO
 
     @CreateDateColumn({
         name: 'createdAt',

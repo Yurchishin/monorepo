@@ -20,7 +20,8 @@
       "@entity": ["entity"],
       "@migration": ["migration"],
       "@domains": ["domains"],
-      "@io-types": ["io-types"]
+      "@io-types": ["io-types"],
+      "@types": ["types"]
     }
   },
   "include": [

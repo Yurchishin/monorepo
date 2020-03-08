@@ -1,9 +1,9 @@
-import t, { TypeOf, tConfig } from '@monorepo/io-types'
+import { tTypes, tConfig, tNumber, TypeOf } from '@monorepo/io-types'
 import { tTypeorm } from './Typeorm'
 import { nodeEnv } from './NodeEnv'
 
-export const processEnv = t.type({
-    PORT: t.intFromString,
+export const processEnv = tTypes.type({
+    PORT: tNumber.intFromString,
     HOST: tConfig.host,
     NODE_ENV: nodeEnv,
     TYPEORM_CONNECTION: tTypeorm.connection,
@@ -18,5 +18,3 @@ export const processEnv = t.type({
     TYPEORM_ENTITIES: tTypeorm.entities,
     TYPEORM_MIGRATIONS: tTypeorm.migrations,
 }, 'processEnv')
-
-export type ProcessEnv = TypeOf<typeof processEnv>

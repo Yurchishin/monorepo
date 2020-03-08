@@ -1,6 +1,6 @@
-export const UserRole = {
-    ADMIN: 'admin',
-    GUEST: 'guest',
+export enum UserRole {
+    ADMIN = 'admin',
+    GUEST = 'guest',
 }
 
 export const UserRoleError = {
