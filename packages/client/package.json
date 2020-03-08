@@ -1,0 +1,26 @@
+{
+  "name": "@monorepo/client",
+  "version": "0.0.2",
+  "description": "> TODO: description",
+  "author": "Yurchishin <yurarary158@gmail.com>",
+  "homepage": "https://github.com/Yurchishin/chat-monorepo#readme",
+  "license": "ISC",
+  "main": "lib/client.js",
+  "directories": {
+    "lib": "lib",
+    "test": "__tests__"
+  },
+  "files": [
+    "lib"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Yurchishin/chat-monorepo.git"
+  },
+  "scripts": {
+    "test": "echo \"Error: run tests from root\" && exit 1"
+  },
+  "bugs": {
+    "url": "https://github.com/Yurchishin/chat-monorepo/issues"
+  }
+}

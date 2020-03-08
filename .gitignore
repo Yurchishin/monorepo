@@ -4,3 +4,4 @@ dist
 .npmrc
 lerna-debug.log
 /coverage/
+/packages/cra-client/
