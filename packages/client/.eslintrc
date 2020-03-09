@@ -1,0 +1,81 @@
+{
+  "extends": [
+    "../../.eslintrc",
+    "plugin:jsx-a11y/strict",
+    "plugin:react/all"
+  ],
+  "plugins": [
+    "jsx-a11y",
+    "react",
+    "react-hooks"
+  ],
+  "env": {
+    "browser": true,
+    "commonjs": true,
+    "es6": true,
+    "jest": true,
+    "node": true
+  },
+  "parserOptions": {
+    "ecmaVersion": 2018,
+    "sourceType": "module",
+    "ecmaFeatures": {
+      "jsx": true
+    }
+  },
+  "rules": {
+    "react-hooks/rules-of-hooks": "error",
+    "react-hooks/exhaustive-deps": "warn",
+    "react/jsx-indent": [
+      "error",
+      4
+    ],
+    "react/jsx-filename-extension": [
+      "error",
+      {
+        "extensions": [
+          ".tsx"
+        ]
+      }
+    ],
+    "react/jsx-max-props-per-line": [
+      "error",
+      {
+        "maximum": 5,
+        "when": "always"
+      }
+    ],
+    "react/jsx-sort-props": [
+      "error",
+      {
+        "noSortAlphabetically": true,
+        "shorthandFirst": true,
+        "callbacksLast": true,
+        "reservedFirst": true
+      }
+    ],
+    "react/jsx-no-literals": "off",
+    "react/jsx-indent-props": [
+      "error",
+      4
+    ],
+    "react/jsx-max-depth": [
+      "error",
+      {
+        "max": 7
+      }
+    ],
+    "react/jsx-one-expression-per-line": [
+      "error",
+      {
+        "allow": "literal"
+      }
+    ],
+    "react/function-component-definition": [
+      2,
+      {
+        "namedComponents": "arrow-function"
+      }
+    ]
+  }
+}

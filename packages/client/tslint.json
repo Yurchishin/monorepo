@@ -1,0 +1,22 @@
+{
+  "extends": [
+    "../../tslint.common.json"
+  ],
+  "linterOptions": {
+    "exclude": [
+      "src/*.spec.ts",
+      "src/*.spec.tsx"
+    ]
+  },
+  "rules": {
+    "no-import-side-effect": false,
+    "no-submodule-imports": [
+      true,
+      "fp-ts",
+      "io-ts",
+      "io-ts-types",
+      "@testing-library"
+    ],
+    "no-trailing-spaces": false
+  }
+}

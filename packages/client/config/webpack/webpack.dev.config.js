@@ -107,11 +107,9 @@ module.exports = {
         use: [
           {
             options: {
-              cache: true,
-              formatter: require.resolve('react-dev-utils/eslintFormatter'),
+              formatter: 'table',
               eslintPath: require.resolve('eslint'),
               resolvePluginsRelativeTo: __dirname,
-
             },
             loader: require.resolve('eslint-loader'),
           },
