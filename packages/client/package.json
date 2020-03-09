@@ -23,7 +23,9 @@
   },
   "dependencies": {
     "react": "^16.13.0",
-    "react-dom": "^16.13.0"
+    "react-dom": "^16.13.0",
+    "@monorepo/dictionary": "^0.0.2",
+    "@monorepo/io-types": "^0.0.2"
   },
   "devDependencies": {
     "@babel/core": "7.8.4",
