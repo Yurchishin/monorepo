@@ -7,7 +7,6 @@ const postcssNormalize = require('postcss-normalize')
 const ManifestPlugin = require('webpack-manifest-plugin')
 const InterpolateHtmlPlugin = require('react-dev-utils/InterpolateHtmlPlugin')
 const WatchMissingNodeModulesPlugin = require('react-dev-utils/WatchMissingNodeModulesPlugin')
-const getCSSModuleLocalIdent = require('react-dev-utils/getCSSModuleLocalIdent')
 const ModuleNotFoundPlugin = require('react-dev-utils/ModuleNotFoundPlugin')
 const ForkTsCheckerWebpackPlugin = require('react-dev-utils/ForkTsCheckerWebpackPlugin')
 const { webpackResolve, webpackResolveLoader, webpackNode } = require('./webpack.common.config')
@@ -181,15 +180,6 @@ module.exports = {
             sideEffects: true,
           },
           {
-            test: REG_EXP.CSS_MODULE,
-            use: getStyleLoaders({
-              importLoaders: 1,
-              modules: {
-                getLocalIdent: getCSSModuleLocalIdent,
-              },
-            }),
-          },
-          {
             test: REG_EXP.SASS,
             exclude: REG_EXP.SASS_MODULE,
             use: getStyleLoaders(
@@ -199,18 +189,6 @@ module.exports = {
               'sass-loader',
             ),
             sideEffects: true,
-          },
-          {
-            test: REG_EXP.SASS_MODULE,
-            use: getStyleLoaders(
-              {
-                importLoaders: 3,
-                modules: {
-                  getLocalIdent: getCSSModuleLocalIdent,
-                },
-              },
-              'sass-loader',
-            ),
           },
           {
             loader: require.resolve('file-loader'),
