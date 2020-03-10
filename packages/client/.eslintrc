@@ -76,6 +76,42 @@
       {
         "namedComponents": "arrow-function"
       }
-    ]
+    ],
+    "react/jsx-wrap-multilines": [
+      2,
+      {
+        "declaration": "parens-new-line",
+        "assignment": "parens-new-line",
+        "return": "parens-new-line",
+        "arrow": "parens-new-line",
+        "condition": "parens-new-line",
+        "logical": "parens-new-line",
+        "prop": "parens-new-line"
+      }
+    ],
+    "react/prefer-stateless-function": "error",
+    "react/state-in-constructor": [
+      "error",
+      "always"
+    ],
+    "react/jsx-key": [
+      "error",
+      {
+        "checkFragmentShorthand": true
+      }
+    ],
+    "react/static-property-placement": [
+      "warn",
+      "property assignment"
+    ],
+    "react/jsx-fragments": [
+      "error",
+      "element"
+    ],
+    "react/forbid-foreign-prop-types": "off",
+    "react/forbid-prop-types": "off",
+    "react/no-unused-prop-types": "off",
+    "react/prop-types": "off",
+    "react/sort-prop-types": "off"
   }
 }

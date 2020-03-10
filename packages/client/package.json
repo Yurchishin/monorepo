@@ -18,8 +18,8 @@
     "lint:fix": "npm run lint:eslint-fix npm run lint:tslint-fix",
     "lint:eslint": "eslint --ext .ts src",
     "lint:eslint-fix": "eslint --fix --ext .ts src",
-    "lint:tslint": "tslint -c ./tslint.json -p ./tsconfig.json",
-    "lint:tslint-fix": "tslint -c ./tslint.json -p ./tsconfig.json --fix"
+    "lint:tslints": "tslint -t stylish -c ./tslint.json -p ./tsconfig.json",
+    "lint:tslint-fix": "tslint -c ./tslint.json -p ./tsconfig.json --fix --format stylish"
   },
   "dependencies": {
     "react": "^16.13.0",

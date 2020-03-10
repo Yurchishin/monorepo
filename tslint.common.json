@@ -164,6 +164,7 @@
     "align": false,
     "completed-docs": false,
     "readonly-array": false,
-    "no-shadowed-variable": false
+    "no-shadowed-variable": false,
+    "no-unused-variable": [true, {"ignore-pattern": "^_"}]
   }
 }

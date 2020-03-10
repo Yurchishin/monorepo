@@ -1,6 +1,7 @@
 {
   "extends": [
-    "../../tslint.common.json"
+    "../../tslint.common.json",
+    "tslint-react"
   ],
   "linterOptions": {
     "exclude": [
@@ -17,6 +18,15 @@
       "io-ts-types",
       "@testing-library"
     ],
-    "no-trailing-spaces": false
+    "no-trailing-spaces": false,
+    "typedef": [
+      true,
+      "parameter",
+      "arrow-parameter",
+      "property-declaration",
+      "member-variable-declaration",
+      "variable-declaration-ignore-function"
+    ],
+    "match-default-export-name": false
   }
 }
