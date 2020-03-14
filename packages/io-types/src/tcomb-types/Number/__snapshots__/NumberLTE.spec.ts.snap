@@ -1,0 +1,29 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`NumberLTE(5) expectTypeFailure(1): TYPE_FAILURE::NumberLTE(1) 1`] = `
+Struct {
+  "errors": Array [
+    Struct {
+      "actual": "1",
+      "expected": [Function],
+      "message": "Invalid value \\"1\\" supplied to NumberLTE",
+      "path": Array [],
+    },
+  ],
+  "value": "1",
+}
+`;
+
+exports[`NumberLTE(5) expectTypeFailure(6): TYPE_FAILURE::NumberLTE(6) 1`] = `
+Struct {
+  "errors": Array [
+    Struct {
+      "actual": 6,
+      "expected": [Function],
+      "message": "Invalid value 6 supplied to NumberLTE",
+      "path": Array [],
+    },
+  ],
+  "value": 6,
+}
+`;

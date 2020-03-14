@@ -1,0 +1,29 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`NumberNotEqual(5) expectTypeFailure(1): TYPE_FAILURE::NumberNotEqual(1) 1`] = `
+Struct {
+  "errors": Array [
+    Struct {
+      "actual": "1",
+      "expected": [Function],
+      "message": "Invalid value \\"1\\" supplied to Number",
+      "path": Array [],
+    },
+  ],
+  "value": "1",
+}
+`;
+
+exports[`NumberNotEqual(5) expectTypeFailure(5): TYPE_FAILURE::NumberNotEqual(5) 1`] = `
+Struct {
+  "errors": Array [
+    Struct {
+      "actual": 5,
+      "expected": [Function],
+      "message": "Invalid value 5 supplied to NumberNotEqual",
+      "path": Array [],
+    },
+  ],
+  "value": 5,
+}
+`;

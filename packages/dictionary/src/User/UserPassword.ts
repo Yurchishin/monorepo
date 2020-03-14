@@ -3,7 +3,7 @@ export const UserPasswordRange = {
     MAX: 20,
 }
 
-export const UserPasswordRegExp = '^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,20}$'
+export const UserPasswordRegExp = new RegExp('^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,20}$')
 
 export const UserPasswordError = {
     TYPE: 'Wrong password type',

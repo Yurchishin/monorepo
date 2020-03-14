@@ -1,0 +1,57 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`StringRegExp(UserPasswordRegExp) expectTypeFailure(1): TYPE_FAILURE::StringRegExp(1) 1`] = `
+Struct {
+  "errors": Array [
+    Struct {
+      "actual": 1,
+      "expected": [Function],
+      "message": "Invalid value 1 supplied to StringRegExp",
+      "path": Array [],
+    },
+  ],
+  "value": 1,
+}
+`;
+
+exports[`StringRegExp(UserPasswordRegExp) expectTypeFailure(55555): TYPE_FAILURE::StringRegExp(55555) 1`] = `
+Struct {
+  "errors": Array [
+    Struct {
+      "actual": "55555",
+      "expected": [Function],
+      "message": "Invalid value \\"55555\\" supplied to StringRegExp",
+      "path": Array [],
+    },
+  ],
+  "value": "55555",
+}
+`;
+
+exports[`StringRegExp(UserPasswordRegExp) expectTypeFailure(OneTwo123): TYPE_FAILURE::StringRegExp(OneTwo123) 1`] = `
+Struct {
+  "errors": Array [
+    Struct {
+      "actual": "OneTwo123",
+      "expected": [Function],
+      "message": "Invalid value \\"OneTwo123\\" supplied to StringRegExp",
+      "path": Array [],
+    },
+  ],
+  "value": "OneTwo123",
+}
+`;
+
+exports[`StringRegExp(UserPasswordRegExp) expectTypeFailure(onetwo123***): TYPE_FAILURE::StringRegExp(onetwo123***) 1`] = `
+Struct {
+  "errors": Array [
+    Struct {
+      "actual": "onetwo123***",
+      "expected": [Function],
+      "message": "Invalid value \\"onetwo123***\\" supplied to StringRegExp",
+      "path": Array [],
+    },
+  ],
+  "value": "onetwo123***",
+}
+`;

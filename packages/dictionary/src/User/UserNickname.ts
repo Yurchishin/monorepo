@@ -3,7 +3,7 @@ export const UserNicknameRange = {
     MAX: 20,
 }
 
-export const UserNicknameRegExp = '^[^0-9][^@#_-]+$'
+export const UserNicknameRegExp = new RegExp('^[^0-9][^@#_-]+$')
 
 export const UserNicknameError = {
     TYPE: 'Wrong nickname type',

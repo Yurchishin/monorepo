@@ -1,0 +1,113 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`UserRole expectTypeFailure(1): TYPE_FAILURE::AdminRole(1) 1`] = `
+Struct {
+  "errors": Array [
+    Struct {
+      "actual": 1,
+      "expected": [Function],
+      "message": "There is no such role",
+      "path": Array [],
+    },
+  ],
+  "value": 1,
+}
+`;
+
+exports[`UserRole expectTypeFailure(1): TYPE_FAILURE::AdminRole(1) 2`] = `
+Struct {
+  "errors": Array [
+    Struct {
+      "actual": 1,
+      "expected": [Function],
+      "message": "There is no such role",
+      "path": Array [],
+    },
+  ],
+  "value": 1,
+}
+`;
+
+exports[`UserRole expectTypeFailure(1): TYPE_FAILURE::UserRole(1) 1`] = `
+Struct {
+  "errors": Array [
+    Struct {
+      "actual": 1,
+      "expected": [Function],
+      "message": "There is no such role",
+      "path": Array [],
+    },
+  ],
+  "value": 1,
+}
+`;
+
+exports[`UserRole expectTypeFailure(admin): TYPE_FAILURE::AdminRole(admin) 1`] = `
+Struct {
+  "errors": Array [
+    Struct {
+      "actual": "admin",
+      "expected": [Function],
+      "message": "There is no such role",
+      "path": Array [],
+    },
+  ],
+  "value": "admin",
+}
+`;
+
+exports[`UserRole expectTypeFailure(guest): TYPE_FAILURE::AdminRole(guest) 1`] = `
+Struct {
+  "errors": Array [
+    Struct {
+      "actual": "guest",
+      "expected": [Function],
+      "message": "There is no such role",
+      "path": Array [],
+    },
+  ],
+  "value": "guest",
+}
+`;
+
+exports[`UserRole expectTypeFailure(other): TYPE_FAILURE::AdminRole(other) 1`] = `
+Struct {
+  "errors": Array [
+    Struct {
+      "actual": "other",
+      "expected": [Function],
+      "message": "There is no such role",
+      "path": Array [],
+    },
+  ],
+  "value": "other",
+}
+`;
+
+exports[`UserRole expectTypeFailure(other): TYPE_FAILURE::AdminRole(other) 2`] = `
+Struct {
+  "errors": Array [
+    Struct {
+      "actual": "other",
+      "expected": [Function],
+      "message": "There is no such role",
+      "path": Array [],
+    },
+  ],
+  "value": "other",
+}
+`;
+
+exports[`UserRole expectTypeFailure(other): TYPE_FAILURE::UserRole(other) 1`] = `
+Struct {
+  "errors": Array [
+    Struct {
+      "actual": "other",
+      "expected": [Function],
+      "message": "There is no such role",
+      "path": Array [],
+    },
+  ],
+  "value": "other",
+}
+`;

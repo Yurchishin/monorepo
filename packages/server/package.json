@@ -18,12 +18,12 @@
     "start:prod": "env-cmd -f .env.prod npm run start",
     "start:build-dev": "npm run build & npm run start:dev",
     "start:build-prod": "npm run build & npm run start:prod",
-    "lint": "npm run lint:eslint npm run lint:tslint",
+    "lint": "npm run lint:eslint & npm run lint:tslint",
     "lint:fix": "npm run lint:eslint-fix npm run lint:tslint-fix",
     "lint:eslint": "eslint --ext .ts src",
     "lint:eslint-fix": "eslint --fix --ext .ts src",
-    "lint:tslint": "tslint -c ./tslint.json -p ./tsconfig.json",
-    "lint:tslint-fix": "tslint -c ./tslint.json -p ./tsconfig.json --fix"
+    "lint:tslint": "tslint -c ./tslint.json -p ./tsconfig.json -t stylish",
+    "lint:tslint-fix": "tslint -c ./tslint.json -p ./tsconfig.json --fix -t stylish"
   },
   "dependencies": {
     "@marblejs/core": "^2.3.1",
@@ -33,7 +33,7 @@
     "@marblejs/middleware-jwt": "^2.3.1",
     "@marblejs/middleware-logger": "^2.3.1",
     "@monorepo/dictionary": "^0.0.2",
-    "@monorepo/io-types": "^0.0.2",
+    "@monorepo/types": "^0.0.2",
     "env-cmd": "^10.0.1",
     "faker": "^4.1.0",
     "fp-ts": "^2.4.1",

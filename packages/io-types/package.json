@@ -1,5 +1,5 @@
 {
-  "name": "@monorepo/io-types",
+  "name": "@monorepo/types",
   "version": "0.0.2",
   "description": "",
   "keywords": [],
@@ -15,38 +15,34 @@
     "watch": "tsc -p tsconfig.json --watch",
     "start": "node dist/index.js",
     "start:build": "npm run build & npm run start",
-    "test": "jest",
+    "test": "jest --verbose",
     "test:watch": "jest --watch",
-    "test:coverage": "jest --coverage",
-    "lint": "npm run lint:eslint npm run lint:tslint",
+    "test:coverage": "jest --coverage --verbose",
+    "lint": "npm run lint:eslint & npm run lint:tslint",
     "lint:fix": "npm run lint:eslint-fix npm run lint:tslint-fix",
     "lint:eslint": "eslint --ext .ts src",
     "lint:eslint-fix": "eslint --fix --ext .ts src",
-    "lint:tslint": "tslint -c ./tslint.json -p ./tsconfig.json",
-    "lint:tslint-fix": "tslint -c ./tslint.json -p ./tsconfig.json --fix"
+    "lint:tslint": "tslint -c ./tslint.json -p ./tsconfig.json -t stylish",
+    "lint:tslint-fix": "tslint -c ./tslint.json -p ./tsconfig.json --fix -t stylish"
+  },
+  "peerDependencies": {
+    "@chat/ramda": "^0.2.0"
   },
   "dependencies": {
     "@monorepo/dictionary": "^0.0.2",
-    "io-ts": "^2.0.5",
-    "io-ts-types": "^0.5.5",
-    "newtype-ts": "^0.3.2",
+    "tcomb-additional-types": "0.0.2",
+    "tcomb-validation": "^3.4.1",
     "ts-jest": "^25.0.0",
     "utility-types": "^3.10.0",
     "validator": "^12.2.0"
-  },
-  "peerDependencies": {
-    "fp-ts": "^2.0.0",
-    "monocle-ts": "^2.0.0"
   },
   "devDependencies": {
     "@types/jest": "^24.9.1",
     "@types/node": "^13.1.8",
     "@types/validator": "^12.0.1",
     "assert": "^2.0.0",
-    "fp-ts": "^2.0.0",
     "jest": "^25.1.0",
-    "monocle-ts": "^2.0.0",
-    "newtype-ts": "^0.3.2",
-    "typescript": "^3.7.5"
+    "typescript": "^3.7.5",
+    "@chat/ramda": "^0.0.2"
   }
 }

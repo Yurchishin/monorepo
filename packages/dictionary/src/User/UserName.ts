@@ -3,7 +3,7 @@ export const UserNameRange = {
     MAX: 20,
 }
 
-export const UserNameRegExp = '^[a-zA-Z \'-]+$'
+export const UserNameRegExp = new RegExp('^[a-zA-Z \'-]+$')
 
 export const UserNameError = {
     TYPE: 'Wrong name type',

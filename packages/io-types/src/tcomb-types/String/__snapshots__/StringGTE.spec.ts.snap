@@ -1,0 +1,29 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`StringGTE(5) expectTypeFailure(1): TYPE_FAILURE::StringGTE(1) 1`] = `
+Struct {
+  "errors": Array [
+    Struct {
+      "actual": 1,
+      "expected": [Function],
+      "message": "Invalid value 1 supplied to StringGTE",
+      "path": Array [],
+    },
+  ],
+  "value": 1,
+}
+`;
+
+exports[`StringGTE(5) expectTypeFailure(4444): TYPE_FAILURE::StringGTE(4444) 1`] = `
+Struct {
+  "errors": Array [
+    Struct {
+      "actual": "4444",
+      "expected": [Function],
+      "message": "Invalid value \\"4444\\" supplied to StringGTE",
+      "path": Array [],
+    },
+  ],
+  "value": "4444",
+}
+`;

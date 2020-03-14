@@ -1,0 +1,29 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Literal('literal') expectTypeFailure(1): TYPE_FAILURE::Name(1) 1`] = `
+Struct {
+  "errors": Array [
+    Struct {
+      "actual": 1,
+      "expected": [Function],
+      "message": "Invalid value 1 supplied to Name",
+      "path": Array [],
+    },
+  ],
+  "value": 1,
+}
+`;
+
+exports[`Literal('literal') expectTypeFailure(other): TYPE_FAILURE::Name(other) 1`] = `
+Struct {
+  "errors": Array [
+    Struct {
+      "actual": "other",
+      "expected": [Function],
+      "message": "Invalid value \\"other\\" supplied to Name",
+      "path": Array [],
+    },
+  ],
+  "value": "other",
+}
+`;

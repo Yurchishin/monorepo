@@ -1,0 +1,75 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`UserName expectTypeFailure(1): TYPE_FAILURE::UserName(1) 1`] = `
+Struct {
+  "errors": Array [
+    Struct {
+      "actual": 1,
+      "expected": [Function],
+      "message": "Wrong name type",
+      "path": Array [],
+    },
+    Struct {
+      "actual": 1,
+      "expected": [Function],
+      "message": "Wrong name type min length",
+      "path": Array [],
+    },
+    Struct {
+      "actual": 1,
+      "expected": [Function],
+      "message": "Wrong name type max length",
+      "path": Array [],
+    },
+    Struct {
+      "actual": 1,
+      "expected": [Function],
+      "message": "Wrong name format",
+      "path": Array [],
+    },
+  ],
+  "value": 1,
+}
+`;
+
+exports[`UserName expectTypeFailure(Yu): TYPE_FAILURE::UserName(Yu) 1`] = `
+Struct {
+  "errors": Array [
+    Struct {
+      "actual": "Yu",
+      "expected": [Function],
+      "message": "Wrong name type min length",
+      "path": Array [],
+    },
+  ],
+  "value": "Yu",
+}
+`;
+
+exports[`UserName expectTypeFailure(Yura1): TYPE_FAILURE::UserName(Yura1) 1`] = `
+Struct {
+  "errors": Array [
+    Struct {
+      "actual": "Yura1",
+      "expected": [Function],
+      "message": "Wrong name format",
+      "path": Array [],
+    },
+  ],
+  "value": "Yura1",
+}
+`;
+
+exports[`UserName expectTypeFailure(YuraYuraYuraYuraYuraYura): TYPE_FAILURE::UserName(YuraYuraYuraYuraYuraYura) 1`] = `
+Struct {
+  "errors": Array [
+    Struct {
+      "actual": "YuraYuraYuraYuraYuraYura",
+      "expected": [Function],
+      "message": "Wrong name type max length",
+      "path": Array [],
+    },
+  ],
+  "value": "YuraYuraYuraYuraYuraYura",
+}
+`;

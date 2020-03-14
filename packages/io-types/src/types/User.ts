@@ -1,11 +1,11 @@
-import { TypeOf } from 'io-ts'
-import tUser from '../io-types/User'
+import tUser from '../tcomb-types/User'
+import { TypeOf } from './TypeOf'
 
-export type UserCreateIO = TypeOf<typeof tUser.create>
-export type UserAgeIO = TypeOf<typeof tUser.age>
-export type UserEmailIO = TypeOf<typeof tUser.email>
-export type UserNameIO = TypeOf<typeof tUser.name>
-export type UserNicknameIO = TypeOf<typeof tUser.nickname>
-export type UserPasswordIO = TypeOf<typeof tUser.password>
-export type UserRoleIO = TypeOf<typeof tUser.role>
-export type UserSurnameIO = TypeOf<typeof tUser.surname>
+export type TUserCreate = TypeOf<typeof tUser.Create>
+export type TUserAge = TypeOf<typeof tUser.Age>
+export type TUserEmail = TypeOf<typeof tUser.Email>
+export type TUserName = TypeOf<typeof tUser.Name>
+export type TUserNickname = TypeOf<typeof tUser.Nickname>
+export type TUserPassword = TypeOf<typeof tUser.Password>
+export type TUserRole = TypeOf<typeof tUser.Role>
+export type TUserSurname = TypeOf<typeof tUser.Surname>

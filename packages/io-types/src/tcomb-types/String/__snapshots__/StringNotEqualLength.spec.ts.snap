@@ -1,0 +1,29 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`StringNotEqualLength(5) expectTypeFailure(1): TYPE_FAILURE::StringNotEqualLength(1) 1`] = `
+Struct {
+  "errors": Array [
+    Struct {
+      "actual": 1,
+      "expected": [Function],
+      "message": "Invalid value 1 supplied to String",
+      "path": Array [],
+    },
+  ],
+  "value": 1,
+}
+`;
+
+exports[`StringNotEqualLength(5) expectTypeFailure(55555): TYPE_FAILURE::StringNotEqualLength(55555) 1`] = `
+Struct {
+  "errors": Array [
+    Struct {
+      "actual": "55555",
+      "expected": [Function],
+      "message": "Invalid value \\"55555\\" supplied to StringNotEqualLength",
+      "path": Array [],
+    },
+  ],
+  "value": "55555",
+}
+`;

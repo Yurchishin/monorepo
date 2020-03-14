@@ -1,0 +1,43 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Numerical(5) expectTypeFailure(1): TYPE_FAILURE::Numerical(1) 1`] = `
+Struct {
+  "errors": Array [
+    Struct {
+      "actual": "1",
+      "expected": [Function],
+      "message": "Invalid value \\"1\\" supplied to Number",
+      "path": Array [],
+    },
+  ],
+  "value": "1",
+}
+`;
+
+exports[`Numerical(5) expectTypeFailure(4): TYPE_FAILURE::Numerical(4) 1`] = `
+Struct {
+  "errors": Array [
+    Struct {
+      "actual": 4,
+      "expected": [Function],
+      "message": "Invalid value 4 supplied to Numerical",
+      "path": Array [],
+    },
+  ],
+  "value": 4,
+}
+`;
+
+exports[`Numerical(5) expectTypeFailure(6): TYPE_FAILURE::Numerical(6) 1`] = `
+Struct {
+  "errors": Array [
+    Struct {
+      "actual": 6,
+      "expected": [Function],
+      "message": "Invalid value 6 supplied to Numerical",
+      "path": Array [],
+    },
+  ],
+  "value": 6,
+}
+`;

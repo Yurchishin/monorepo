@@ -3,7 +3,7 @@ export const UserSurnameRange = {
     MAX: 20,
 }
 
-export const UserSurnameRegExp = '^[a-zA-Z \'-]+$'
+export const UserSurnameRegExp = new RegExp('^[a-zA-Z \'-]+$')
 
 export const UserSurnameError = {
     TYPE: 'Wrong surname type',

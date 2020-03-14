@@ -1,0 +1,63 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`UserEmail expectTypeFailure(1): TYPE_FAILURE::UserEmail(1) 1`] = `
+Struct {
+  "errors": Array [
+    Struct {
+      "actual": 1,
+      "expected": [Function],
+      "message": "Wrong email type",
+      "path": Array [],
+    },
+    Struct {
+      "actual": 1,
+      "expected": [Function],
+      "message": "Wrong email type",
+      "path": Array [],
+    },
+  ],
+  "value": 1,
+}
+`;
+
+exports[`UserEmail expectTypeFailure(yurarary): TYPE_FAILURE::UserEmail(yurarary) 1`] = `
+Struct {
+  "errors": Array [
+    Struct {
+      "actual": "yurarary",
+      "expected": [Function],
+      "message": "Wrong email",
+      "path": Array [],
+    },
+  ],
+  "value": "yurarary",
+}
+`;
+
+exports[`UserEmail expectTypeFailure(yurarary@): TYPE_FAILURE::UserEmail(yurarary@) 1`] = `
+Struct {
+  "errors": Array [
+    Struct {
+      "actual": "yurarary@",
+      "expected": [Function],
+      "message": "Wrong email",
+      "path": Array [],
+    },
+  ],
+  "value": "yurarary@",
+}
+`;
+
+exports[`UserEmail expectTypeFailure(yurarary@12123): TYPE_FAILURE::UserEmail(yurarary@12123) 1`] = `
+Struct {
+  "errors": Array [
+    Struct {
+      "actual": "yurarary@12123",
+      "expected": [Function],
+      "message": "Wrong email",
+      "path": Array [],
+    },
+  ],
+  "value": "yurarary@12123",
+}
+`;

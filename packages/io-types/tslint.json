@@ -16,6 +16,9 @@
       "fp-ts",
       "io-ts",
       "io-ts-types"
-    ]
+    ],
+    "match-default-export-name": false,
+    "strict-boolean-expressions": false,
+    "no-unsafe-any": false
   }
 }

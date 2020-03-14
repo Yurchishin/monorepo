@@ -1,7 +1,6 @@
 {
   "extends": [
-    "../../tslint.common.json",
-    "tslint-react"
+    "../../tslint.common.json"
   ],
   "linterOptions": {
     "exclude": [

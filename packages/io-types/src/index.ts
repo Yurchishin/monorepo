@@ -1,14 +1,19 @@
-export { TypeOf, Errors } from 'io-ts'
-export { PathReporter } from 'io-ts/lib/PathReporter'
 export * from './types'
 
-export {
-    tBoolean,
+import {
     tConfig,
+    tNil,
     tNumber,
     tString,
     tUser,
-} from './io-types'
+} from './tcomb-types'
 
-import * as t from 'io-ts'
-export const tTypes = t
+const t = {
+    Config: tConfig,
+    Number: tNumber,
+    String: tString,
+    User: tUser,
+    Nil: tNil,
+}
+
+export default t

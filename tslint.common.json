@@ -14,11 +14,7 @@
     "prefer-dry-conditionals": true,
     "newspaper-order": true,
     "no-circular-imports": true,
-    "readonly-keyword": [
-      true,
-      "ignore-class",
-      "ignore-interface"
-    ],
+    "readonly-keyword": false,
     "no-var-keyword": true,
     "no-parameter-reassignment": true,
     "typedef": [

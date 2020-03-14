@@ -1,0 +1,61 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`UserNickname expectTypeFailure(1): TYPE_FAILURE::UserNickname(1) 1`] = `
+Struct {
+  "errors": Array [
+    Struct {
+      "actual": 1,
+      "expected": [Function],
+      "message": "Wrong nickname type",
+      "path": Array [],
+    },
+    Struct {
+      "actual": 1,
+      "expected": [Function],
+      "message": "Wrong nickname type max length",
+      "path": Array [],
+    },
+    Struct {
+      "actual": 1,
+      "expected": [Function],
+      "message": "Wrong nickname type min length",
+      "path": Array [],
+    },
+    Struct {
+      "actual": 1,
+      "expected": [Function],
+      "message": "Wrong nickname format",
+      "path": Array [],
+    },
+  ],
+  "value": 1,
+}
+`;
+
+exports[`UserNickname expectTypeFailure(yury): TYPE_FAILURE::UserNickname(yury) 1`] = `
+Struct {
+  "errors": Array [
+    Struct {
+      "actual": "yury",
+      "expected": [Function],
+      "message": "Wrong nickname type min length",
+      "path": Array [],
+    },
+  ],
+  "value": "yury",
+}
+`;
+
+exports[`UserNickname expectTypeFailure(yuryyuryyuryyuryyuryyury): TYPE_FAILURE::UserNickname(yuryyuryyuryyuryyuryyury) 1`] = `
+Struct {
+  "errors": Array [
+    Struct {
+      "actual": "yuryyuryyuryyuryyuryyury",
+      "expected": [Function],
+      "message": "Wrong nickname type max length",
+      "path": Array [],
+    },
+  ],
+  "value": "yuryyuryyuryyuryyuryyury",
+}
+`;

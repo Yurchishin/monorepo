@@ -15,7 +15,7 @@
     "watch": "tsc -p tsconfig.json --watch",
     "start": "node dist/index.js",
     "start:build": "npm run build & npm run start",
-    "lint": "npm run lint:eslint npm run lint:tslint",
+    "lint": "npm run lint:eslint & npm run lint:tslint",
     "lint:fix": "npm run lint:eslint-fix npm run lint:tslint-fix",
     "lint:eslint": "eslint --ext .ts src",
     "lint:eslint-fix": "eslint --fix --ext .ts src",
@@ -23,9 +23,7 @@
     "lint:tslint-fix": "tslint -c ./tslint.json -p ./tsconfig.json --fix"
   },
   "devDependencies": {
+    "@types/node": "^13.1.8",
     "typescript": "^3.7.5"
-  },
-  "dependencies": {
-    "@types/node": "^13.1.8"
   }
 }

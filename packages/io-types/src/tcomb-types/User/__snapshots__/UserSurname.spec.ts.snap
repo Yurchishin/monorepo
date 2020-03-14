@@ -1,0 +1,75 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`UserSurname expectTypeFailure(1): TYPE_FAILURE::UserSurname(1) 1`] = `
+Struct {
+  "errors": Array [
+    Struct {
+      "actual": 1,
+      "expected": [Function],
+      "message": "Wrong surname type",
+      "path": Array [],
+    },
+    Struct {
+      "actual": 1,
+      "expected": [Function],
+      "message": "Wrong surname type max length",
+      "path": Array [],
+    },
+    Struct {
+      "actual": 1,
+      "expected": [Function],
+      "message": "Wrong surname type min length",
+      "path": Array [],
+    },
+    Struct {
+      "actual": 1,
+      "expected": [Function],
+      "message": "Wrong surname format",
+      "path": Array [],
+    },
+  ],
+  "value": 1,
+}
+`;
+
+exports[`UserSurname expectTypeFailure(Ry): TYPE_FAILURE::UserSurname(Ry) 1`] = `
+Struct {
+  "errors": Array [
+    Struct {
+      "actual": "Ry",
+      "expected": [Function],
+      "message": "Wrong surname type min length",
+      "path": Array [],
+    },
+  ],
+  "value": "Ry",
+}
+`;
+
+exports[`UserSurname expectTypeFailure(Rybak1): TYPE_FAILURE::UserSurname(Rybak1) 1`] = `
+Struct {
+  "errors": Array [
+    Struct {
+      "actual": "Rybak1",
+      "expected": [Function],
+      "message": "Wrong surname format",
+      "path": Array [],
+    },
+  ],
+  "value": "Rybak1",
+}
+`;
+
+exports[`UserSurname expectTypeFailure(RybakRybakRybakRybakRybak): TYPE_FAILURE::UserSurname(RybakRybakRybakRybakRybak) 1`] = `
+Struct {
+  "errors": Array [
+    Struct {
+      "actual": "RybakRybakRybakRybakRybak",
+      "expected": [Function],
+      "message": "Wrong surname type max length",
+      "path": Array [],
+    },
+  ],
+  "value": "RybakRybakRybakRybakRybak",
+}
+`;

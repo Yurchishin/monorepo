@@ -1,0 +1,107 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`UserAge expectTypeFailure(11): TYPE_FAILURE::UserAge(11) 1`] = `
+Struct {
+  "errors": Array [
+    Struct {
+      "actual": 11,
+      "expected": [Function],
+      "message": "The wrong min range of age",
+      "path": Array [],
+    },
+  ],
+  "value": 11,
+}
+`;
+
+exports[`UserAge expectTypeFailure(11): TYPE_FAILURE::UserAge(11) 2`] = `
+Struct {
+  "errors": Array [
+    Struct {
+      "actual": "11",
+      "expected": [Function],
+      "message": "The wrong type of age",
+      "path": Array [],
+    },
+    Struct {
+      "actual": "11",
+      "expected": [Function],
+      "message": "The wrong max range of age",
+      "path": Array [],
+    },
+    Struct {
+      "actual": "11",
+      "expected": [Function],
+      "message": "The wrong min range of age",
+      "path": Array [],
+    },
+  ],
+  "value": "11",
+}
+`;
+
+exports[`UserAge expectTypeFailure(30): TYPE_FAILURE::UserAge(30) 1`] = `
+Struct {
+  "errors": Array [
+    Struct {
+      "actual": "30",
+      "expected": [Function],
+      "message": "The wrong type of age",
+      "path": Array [],
+    },
+    Struct {
+      "actual": "30",
+      "expected": [Function],
+      "message": "The wrong max range of age",
+      "path": Array [],
+    },
+    Struct {
+      "actual": "30",
+      "expected": [Function],
+      "message": "The wrong min range of age",
+      "path": Array [],
+    },
+  ],
+  "value": "30",
+}
+`;
+
+exports[`UserAge expectTypeFailure(61): TYPE_FAILURE::UserAge(61) 1`] = `
+Struct {
+  "errors": Array [
+    Struct {
+      "actual": 61,
+      "expected": [Function],
+      "message": "The wrong max range of age",
+      "path": Array [],
+    },
+  ],
+  "value": 61,
+}
+`;
+
+exports[`UserAge expectTypeFailure(61): TYPE_FAILURE::UserAge(61) 2`] = `
+Struct {
+  "errors": Array [
+    Struct {
+      "actual": "61",
+      "expected": [Function],
+      "message": "The wrong type of age",
+      "path": Array [],
+    },
+    Struct {
+      "actual": "61",
+      "expected": [Function],
+      "message": "The wrong max range of age",
+      "path": Array [],
+    },
+    Struct {
+      "actual": "61",
+      "expected": [Function],
+      "message": "The wrong min range of age",
+      "path": Array [],
+    },
+  ],
+  "value": "61",
+}
+`;
