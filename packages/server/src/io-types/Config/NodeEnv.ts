@@ -1,4 +1,4 @@
-import { tTypes } from '@monorepo/io-types'
+import { tTypes } from '../../../../types'
 import { NodeEnv } from '@monorepo/dictionary'
 
 export const nodeEnv = tTypes.union([

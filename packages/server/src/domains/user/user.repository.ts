@@ -3,7 +3,7 @@ import { EntityRepository, AbstractRepository } from 'typeorm'
 import UserEntity from './user.entity'
 import * as TE from 'fp-ts/lib/TaskEither'
 import TaskEither = TE.TaskEither
-import { UserCreateIO } from '@monorepo/io-types'
+import { UserCreateIO } from '../../../../types'
 
 @EntityRepository(UserEntity)
 export class UserRepository extends AbstractRepository<UserEntity> {

@@ -8,7 +8,7 @@ import {
     ManyToOne,
 } from 'typeorm'
 import RoleEntity from '../role/role.entity'
-import { UserRoleIO } from '@monorepo/io-types'
+import { UserRoleIO } from '../../../../types'
 
 @Entity({
     name: 'user',

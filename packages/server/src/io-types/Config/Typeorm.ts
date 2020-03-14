@@ -1,4 +1,4 @@
-import { tTypes, tNumber, tBoolean } from '@monorepo/io-types'
+import { tTypes, tNumber, tBoolean } from '../../../../types'
 import {
     TYPEORM_CONNECTION,
     TYPEORM_ENTITIES,

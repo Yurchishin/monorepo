@@ -1,4 +1,4 @@
-import { tTypes, tConfig, tNumber, TypeOf } from '@monorepo/io-types'
+import { tTypes, tConfig, tNumber, TypeOf } from '../../../../types'
 import { tTypeorm } from './Typeorm'
 import { nodeEnv } from './NodeEnv'
 

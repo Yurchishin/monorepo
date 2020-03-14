@@ -1,5 +1,5 @@
 import { createContext } from '@marblejs/core'
-import { PathReporter } from '@monorepo/io-types'
+import { PathReporter } from '../../types'
 import { createConnection } from 'typeorm'
 import { pipe } from 'fp-ts/lib/pipeable'
 import { error } from 'fp-ts/lib/Console'
