@@ -29,6 +29,7 @@
   "devDependencies": {
     "@types/node": "^13.1.8",
     "@types/ramda": "^0.26.43",
-    "typescript": "^3.7.5"
+    "typescript": "^3.7.5",
+    "ts-toolbelt": "^6.3.3"
   }
 }

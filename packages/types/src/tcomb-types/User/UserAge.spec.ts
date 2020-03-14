@@ -1,5 +1,5 @@
 import { UserAge } from './UserAge'
-import { UserAgeError } from "@monorepo/dictionary";
+import { UserAgeError } from "@chat/dictionary";
 import { expectTypeSuccess, expectTypeErrors } from "../../tests"
 
 describe('UserAge', () => {

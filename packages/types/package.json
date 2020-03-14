@@ -1,5 +1,5 @@
 {
-  "name": "@monorepo/types",
+  "name": "@chat/types",
   "version": "0.0.2",
   "description": "",
   "keywords": [],
@@ -29,7 +29,7 @@
     "@chat/ramda": "^0.2.0"
   },
   "dependencies": {
-    "@monorepo/dictionary": "^0.0.2",
+    "@chat/dictionary": "^0.0.2",
     "tcomb-additional-types": "0.0.2",
     "tcomb-validation": "^3.4.1",
     "ts-jest": "^25.0.0",

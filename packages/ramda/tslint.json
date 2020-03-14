@@ -9,6 +9,9 @@
     ]
   },
   "rules": {
-
+    "no-submodule-imports": [
+      true,
+      "Function"
+    ]
   }
 }

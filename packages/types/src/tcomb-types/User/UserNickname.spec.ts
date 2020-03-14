@@ -1,6 +1,6 @@
 import {UserNickname} from './UserNickname'
 import {expectTypeSuccess, expectTypeErrors} from "../../tests"
-import { UserNicknameError } from "@monorepo/dictionary";
+import { UserNicknameError } from "@chat/dictionary";
 
 describe('UserNickname', () => {
 	expectTypeSuccess(UserNickname, 'yuryy')

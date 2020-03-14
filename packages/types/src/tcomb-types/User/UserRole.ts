@@ -1,5 +1,5 @@
 import t from 'tcomb-validation'
-import { UserRole as UserRoles, UserRoleError } from '@monorepo/dictionary'
+import { UserRole as UserRoles, UserRoleError } from '@chat/dictionary'
 import tString from '../String'
 import { addErrorMessage } from '../../utils'
 

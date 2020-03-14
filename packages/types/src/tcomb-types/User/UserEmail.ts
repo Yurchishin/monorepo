@@ -1,5 +1,5 @@
 import t, { Intersection } from 'tcomb-validation'
-import { UserEmailError } from '@monorepo/dictionary'
+import { UserEmailError } from '@chat/dictionary'
 import { addErrorMessage } from '../../utils'
 import tString from '../String'
 

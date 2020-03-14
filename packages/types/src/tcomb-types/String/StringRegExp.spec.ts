@@ -1,4 +1,4 @@
-import {UserPasswordRegExp} from "@monorepo/dictionary";
+import {UserPasswordRegExp} from "@chat/dictionary";
 import {StringRegExp} from './StringRegExp'
 import {expectTypeSuccess, expectTypeFailure} from "../../tests"
 

@@ -21,7 +21,6 @@
     "typedef": [
       true,
       "parameter",
-      "arrow-parameter",
       "property-declaration",
       "member-variable-declaration",
       "variable-declaration-ignore-function"

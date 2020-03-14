@@ -1,10 +1,6 @@
 import React, { FC } from 'react'
 import logo from './logo.svg'
 import './App.css'
-import { spacingSizeRemM } from './utils/styles/relatives/spacing'
-import { some } from 'fp-ts/lib/Option'
-
-console.log(spacingSizeRemM(some(1)))
 
 const App: FC = () => (
     <div className="App">

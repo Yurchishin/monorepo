@@ -1,4 +1,4 @@
-import { Host } from "@monorepo/dictionary";
+import { Host } from "@chat/dictionary";
 import { Localhost } from './Localhost'
 import { expectTypeSuccess, expectTypeFailure } from "../../tests"
 

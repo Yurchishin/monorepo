@@ -1,6 +1,6 @@
 import {UserRole, GuestRole, AdminRole} from './UserRole'
 import {expectTypeSuccess, expectTypeErrors} from "../../tests"
-import {UserRoleError} from "@monorepo/dictionary";
+import {UserRoleError} from "@chat/dictionary";
 
 describe('UserRole', () => {
 	expectTypeSuccess(UserRole, 'admin')
