@@ -12,10 +12,9 @@
     "no-import-side-effect": false,
     "no-submodule-imports": [
       true,
-      "fp-ts",
-      "io-ts",
-      "io-ts-types",
-      "@testing-library"
+      "@testing-library",
+      "@client",
+      "@chat"
     ],
     "no-trailing-spaces": false,
     "typedef": [

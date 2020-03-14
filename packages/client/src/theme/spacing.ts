@@ -2,7 +2,7 @@ import {
     spacingSimpleSizeRem,
     spacingSquishSizeRem,
     spacingStretchSizeRem,
-} from '../utils'
+} from '@client/utils'
 
 export const spacingSizeRem = (size: number) => ({
     SIMPLE: spacingSimpleSizeRem(size),

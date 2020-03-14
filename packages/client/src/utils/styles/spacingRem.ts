@@ -1,10 +1,9 @@
-import { REM_UNIT } from '../../constants/styles'
+import { REM_UNIT } from '@client/constants'
 import {
     spacingSimpleSizeMultiplier,
     spacingSquishSizeMultiplier,
     spacingStretchSizeMultiplier,
     spacingSizeBuilder,
-    SpacingSizeUnitBuilder,
 } from './spacing'
 
 const spacingSizeRemBuilder = spacingSizeBuilder(REM_UNIT)

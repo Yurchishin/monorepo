@@ -5,8 +5,8 @@ import {
     SPACING_MULTIPLIER_M,
     SPACING_MULTIPLIER_L,
     SPACING_MULTIPLIER_XL,
-} from '../../constants'
-import { RelativeUnit } from '../../types'
+} from '@client/constants'
+import { RelativeUnit } from '@client/types'
 
 /*********************************************************************************************/
 
