@@ -1,17 +1,17 @@
 import { REM_UNIT } from '@client/constants'
 import {
-    spacingSimpleSizeMultiplier,
-    spacingSquishSizeMultiplier,
-    spacingStretchSizeMultiplier,
-    spacingSizeBuilder,
+    spacingMultiplySimpleParser,
+    spacingMultiplySquishParser,
+    spacingMultiplyStretchParser,
+    spacingSizeFactory,
 } from './spacing'
 
-const spacingSizeRemBuilder = spacingSizeBuilder(REM_UNIT)
+const spacingSizeRemFactory = spacingSizeFactory(REM_UNIT)
 
 /*********************************************************************************************/
 
-export const spacingSimpleSizeRem = spacingSizeRemBuilder(spacingSimpleSizeMultiplier)
-export const spacingSquishSizeRem = spacingSizeRemBuilder(spacingSquishSizeMultiplier)
-export const spacingStretchSizeRem = spacingSizeRemBuilder(spacingStretchSizeMultiplier)
+export const spacingSimpleSizeRem = spacingSizeRemFactory(spacingMultiplySimpleParser)
+export const spacingSquishSizeRem = spacingSizeRemFactory(spacingMultiplySquishParser)
+export const spacingStretchSizeRem = spacingSizeRemFactory(spacingMultiplyStretchParser)
 
 /*********************************************************************************************/

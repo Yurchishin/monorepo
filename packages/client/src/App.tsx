@@ -1,6 +1,9 @@
 import React, { FC } from 'react'
 import logo from './logo.svg'
 import './App.css'
+import { spacingSizeRem } from '@client/theme'
+
+console.log(spacingSizeRem(15).SIMPLE)
 
 const App: FC = () => (
     <div className="App">

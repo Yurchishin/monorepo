@@ -1,4 +1,4 @@
-import R, { Curry } from '@chat/ramda'
+import R from '@chat/ramda'
 import {
     SPACING_MULTIPLIER_XS,
     SPACING_MULTIPLIER_S,
@@ -8,85 +8,64 @@ import {
 } from '@client/constants'
 import { RelativeUnit } from '@client/types'
 
-/*********************************************************************************************/
-
-type SpacingSizeMultiply = (a: number, b: number) => number
-
-const spacingSizeMultiply = R.multiply
-
-const spacingSizeDoubleMultiply = R.compose<number, number, number, number>(
-    R.double,
-    R.multiply,
-)
+const space = (a: string, b: string) => `${a} ${b}`
 
 /*********************************************************************************************/
 
-type SizeUnitParser = (unit: RelativeUnit, size: number, _: number) => string
+type SpacingParser = (unit: RelativeUnit, size: number) => string
 
 // '1px'
-const spacingSimpleSizeUnitParser: SizeUnitParser = (unit, size, _) => `${size}${unit}`
+const spacingSimpleParser: SpacingParser = (unit, size) => `${size}${unit}`
+
+// '2px'
+const spacingSimpleDoubleParser: SpacingParser = (unit, size) => `${size}${R.double(size)}`
 
 // '1px 2px'
-const spacingSquishSizeUnitParser: SizeUnitParser = (unit, size, squishSize) =>
-    `${spacingSimpleSizeUnitParser(unit, size, size)} ${spacingSimpleSizeUnitParser(unit, squishSize, squishSize)}`
+const spacingSquishParser: SpacingParser = (unit, size) =>
+    space(
+        spacingSimpleParser(unit, size),
+        spacingSimpleDoubleParser(unit, size),
+    )
 
 // '2px 1px'
-const spacingStretchSizeUnitParser: SizeUnitParser = (unit, size, squishSize) =>
-    `${spacingSimpleSizeUnitParser(unit, squishSize, squishSize)} ${spacingSimpleSizeUnitParser(unit, size, size)}`
+const spacingStretchParser: SpacingParser = (unit, size) =>
+    space(
+        spacingSimpleDoubleParser(unit, size),
+        spacingSimpleParser(unit, size),
+    )
 
 /*********************************************************************************************/
 
-type SpacingSizeMultiplier = (unit: RelativeUnit, multiplier: number, size: number) => string
+type SpacingMultiplyParser = (unit: RelativeUnit, multiplier: number, size: number) => string
 
-export const spacingMultiplierBuilder = R.curry(
-    (
-        parser: SizeUnitParser,
-        additionalMultiply: SpacingSizeMultiply,
-    ): SpacingSizeMultiplier =>
-    (
+export const spacingMultiplyParserFactory = (
+        parser: SpacingParser,
+    ): SpacingMultiplyParser => (
         unit: RelativeUnit,
         multiplier: number,
         size: number,
     ): string => {
-        const currentSize = spacingSizeMultiply(multiplier, size)
-        const additionalSize = additionalMultiply(multiplier, size)
+        const correctSize = R.multiply(multiplier, size)
 
-        return parser(unit, currentSize, additionalSize)
-    },
+        return parser(unit, correctSize)
+    }
+
+export const spacingMultiplySimpleParser: SpacingMultiplyParser = spacingMultiplyParserFactory(
+    spacingSimpleParser,
 )
 
-export const spacingSimpleSizeMultiplier: SpacingSizeMultiplier = spacingMultiplierBuilder(
-    spacingSimpleSizeUnitParser,
-    spacingSizeMultiply,
+export const spacingMultiplySquishParser: SpacingMultiplyParser = spacingMultiplyParserFactory(
+    spacingSquishParser,
 )
 
-export const spacingSquishSizeMultiplier: SpacingSizeMultiplier = spacingMultiplierBuilder(
-    spacingSquishSizeUnitParser,
-    spacingSizeDoubleMultiply,
-)
-
-export const spacingStretchSizeMultiplier: SpacingSizeMultiplier = spacingMultiplierBuilder(
-    spacingStretchSizeUnitParser,
-    spacingSizeDoubleMultiply,
+export const spacingMultiplyStretchParser: SpacingMultiplyParser = spacingMultiplyParserFactory(
+    spacingStretchParser,
 )
 
 /*********************************************************************************************/
 
-type SpacingSizes = {
-    XS: string;
-    S: string;
-    M: string;
-    L: string;
-    XL: string;
-}
-
-export type SpacingSizeUnitBuilder = Curry<(
-    spacingSizeMultiplier: SpacingSizeMultiplier,
-    size: number,
-) => SpacingSizes>
-
-export const spacingSizeBuilder = R.curry(
-    (unit: RelativeUnit, spacingSizeMultiplier: SpacingSizeMultiplier, size: number) => ({
+export const spacingSizeFactory = R.curry(
+    (unit: RelativeUnit, spacingSizeMultiplier: SpacingMultiplyParser, size: number) => ({
         XS: spacingSizeMultiplier(unit, SPACING_MULTIPLIER_XS, size),
         S: spacingSizeMultiplier(unit, SPACING_MULTIPLIER_S, size),
         M: spacingSizeMultiplier(unit, SPACING_MULTIPLIER_M, size),
