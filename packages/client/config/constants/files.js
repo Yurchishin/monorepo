@@ -12,6 +12,11 @@ const FILE_EXTENSIONS = [
   'jsx',
 ];
 
+const STYLES_FILE_EXTENSIONS = [
+  'less',
+  'css',
+];
+
 const DEV_FILENAME = 'static/js/bundle.js'
 const DEV_CHUNK_FILENAME = 'static/js/[name].chunk.js'
 

@@ -16,6 +16,7 @@
     "paths": {
       "@client/constants": ["constants"],
       "@client/dictionary": ["dictionary"],
+      "@client/services": ["services"],
       "@client/tcomb-types": ["tcomb-types"],
       "@client/theme": ["theme"],
       "@client/types": ["types"],

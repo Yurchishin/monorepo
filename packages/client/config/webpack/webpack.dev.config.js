@@ -1,42 +1,49 @@
-const path = require('path')
-const webpack = require('webpack')
-const resolve = require('resolve')
-const HtmlWebpackPlugin = require('html-webpack-plugin')
-const CaseSensitivePathsPlugin = require('case-sensitive-paths-webpack-plugin')
-const postcssNormalize = require('postcss-normalize')
-const ManifestPlugin = require('webpack-manifest-plugin')
-const InterpolateHtmlPlugin = require('react-dev-utils/InterpolateHtmlPlugin')
-const WatchMissingNodeModulesPlugin = require('react-dev-utils/WatchMissingNodeModulesPlugin')
-const ModuleNotFoundPlugin = require('react-dev-utils/ModuleNotFoundPlugin')
-const ForkTsCheckerWebpackPlugin = require('react-dev-utils/ForkTsCheckerWebpackPlugin')
-const { webpackResolve, webpackResolveLoader, webpackNode } = require('./webpack.common.config')
-const PROCESS = require('../constants/process')
-const PATHS = require('../constants/paths')
-const ENV = require('../constants/env')
-const FILES = require('../constants/files')
-const REG_EXP = require('../constants/regExp')
-const { getClientEnvironment } = require('../env/env.utils')
+const path = require("path");
+const fs = require("fs");
+const webpack = require("webpack");
+const resolve = require("resolve");
+const HtmlWebpackPlugin = require("html-webpack-plugin");
+const CaseSensitivePathsPlugin = require("case-sensitive-paths-webpack-plugin");
+const postcssNormalize = require("postcss-normalize");
+const ManifestPlugin = require("webpack-manifest-plugin");
+const InterpolateHtmlPlugin = require("react-dev-utils/InterpolateHtmlPlugin");
+const WatchMissingNodeModulesPlugin = require("react-dev-utils/WatchMissingNodeModulesPlugin");
+const ModuleNotFoundPlugin = require("react-dev-utils/ModuleNotFoundPlugin");
+const ForkTsCheckerWebpackPlugin = require("react-dev-utils/ForkTsCheckerWebpackPlugin");
+const AntDesignThemePlugin = require("antd-theme-webpack-plugin");
+const { webpackResolve, webpackResolveLoader, webpackNode } = require("./webpack.common.config");
+const lessToJs = require("less-vars-to-js");
+const PROCESS = require("../constants/process");
+const PATHS = require("../constants/paths");
+const ENV = require("../constants/env");
+const FILES = require("../constants/files");
+const REG_EXP = require("../constants/regExp");
+const { getClientEnvironment } = require("../env/env.utils");
 
-const appPackageJson = require(PATHS.APP_PACKAGE_JSON)
+const lessVariables = fs.readFileSync(PATHS.APP_STYLES_VARIABLES, "utf8");
+const variables = lessToJs(lessVariables);
+const themeVariables = Object.keys(variables);
 
-const env = getClientEnvironment(PATHS.PUBLIC_URL_OR_PATH.slice(0, -1))
+const appPackageJson = require(PATHS.APP_PACKAGE_JSON);
+
+const env = getClientEnvironment(PATHS.PUBLIC_URL_OR_PATH.slice(0, -1));
 
 const getStyleLoaders = (cssOptions, preProcessor) => {
   const loaders = [
-    require.resolve('style-loader'),
+    require.resolve("style-loader"),
     {
-      loader: require.resolve('css-loader'),
+      loader: require.resolve("css-loader"),
       options: cssOptions,
     },
     {
-      loader: require.resolve('postcss-loader'),
+      loader: require.resolve("postcss-loader"),
       options: {
-        ident: 'postcss',
+        ident: "postcss",
         plugins: () => [
-          require('postcss-flexbugs-fixes'),
-          require('postcss-preset-env')({
+          require("postcss-flexbugs-fixes"),
+          require("postcss-preset-env")({
             autoprefixer: {
-              flexbox: 'no-2009',
+              flexbox: "no-2009",
             },
             stage: 3,
           }),
@@ -44,11 +51,11 @@ const getStyleLoaders = (cssOptions, preProcessor) => {
         ],
       },
     },
-  ]
+  ];
   if (preProcessor) {
     loaders.push(
       {
-        loader: require.resolve('resolve-url-loader'),
+        loader: require.resolve("resolve-url-loader"),
       },
       {
         loader: require.resolve(preProcessor),
@@ -56,17 +63,18 @@ const getStyleLoaders = (cssOptions, preProcessor) => {
           sourceMap: true,
         },
       },
-    )
+    );
   }
-  return loaders
-}
+
+  return loaders;
+};
 
 module.exports = {
   mode: ENV.DEVELOPMENT,
   bail: false,
-  devtool: 'cheap-module-source-map',
+  devtool: "cheap-module-source-map",
   entry: [
-    require.resolve('react-dev-utils/webpackHotDevClient'),
+    require.resolve("react-dev-utils/webpackHotDevClient"),
     PATHS.APP_INDEX_JS,
   ],
   output: {
@@ -76,22 +84,22 @@ module.exports = {
     futureEmitAssets: true,
     chunkFilename: FILES.DEV_CHUNK_FILENAME,
     publicPath: PATHS.PUBLIC_URL_OR_PATH,
-    devtoolModuleFilenameTemplate: info => path.resolve(info.absoluteResourcePath).replace(
+    devtoolModuleFilenameTemplate: (info) => path.resolve(info.absoluteResourcePath).replace(
       /\\/g,
-      '/',
+      "/",
     ),
     jsonpFunction: `webpackJsonp${appPackageJson.name}`,
-    globalObject: 'this',
+    globalObject: "this",
   },
   optimization: {
     minimize: false,
     minimizer: [],
     splitChunks: {
-      chunks: 'all',
+      chunks: "all",
       name: false,
     },
     runtimeChunk: {
-      name: entrypoint => `runtime-${entrypoint.name}`,
+      name: (entrypoint) => `runtime-${entrypoint.name}`,
     },
   },
   resolve: webpackResolve(),
@@ -101,16 +109,16 @@ module.exports = {
     rules: [
       { parser: { requireEnsure: false } },
       {
-        test: /\.(ts|tsx)$/,
-        enforce: 'pre',
+        test: /\.(js|jsx|ts|tsx)$/,
+        enforce: "pre",
         use: [
           {
             options: {
-              formatter: 'table',
-              eslintPath: require.resolve('eslint'),
+              formatter: "table",
+              eslintPath: require.resolve("eslint"),
               resolvePluginsRelativeTo: __dirname,
             },
-            loader: require.resolve('eslint-loader'),
+            loader: require.resolve("eslint-loader"),
           },
         ],
         include: PATHS.APP_SRC,
@@ -119,28 +127,28 @@ module.exports = {
         oneOf: [
           {
             test: [/\.bmp$/, /\.gif$/, /\.jpe?g$/, /\.png$/],
-            loader: require.resolve('url-loader'),
+            loader: require.resolve("url-loader"),
             options: {
               limit: PROCESS.IMAGE_INLINE_SIZE_LIMIT,
-              name: 'static/media/[name].[hash:8].[ext]',
+              name: "static/media/[name].[hash:8].[ext]",
             },
           },
           {
-            test: /\.(ts|tsx)$/,
+            test: /\.(js|mjs|jsx|ts|tsx)$/,
             include: PATHS.APP_SRC,
-            loader: require.resolve('babel-loader'),
+            loader: require.resolve("babel-loader"),
             options: {
               customize: require.resolve(
-                'babel-preset-react-app/webpack-overrides',
+                "babel-preset-react-app/webpack-overrides",
               ),
               plugins: [
                 [
-                  require.resolve('babel-plugin-named-asset-import'),
+                  require.resolve("babel-plugin-named-asset-import"),
                   {
                     loaderMap: {
                       svg: {
                         ReactComponent:
-                          '@svgr/webpack?-svgo,+titleProp,+ref![path]',
+                          "@svgr/webpack?-svgo,+titleProp,+ref![path]",
                       },
                     },
                   },
@@ -153,15 +161,14 @@ module.exports = {
           },
           {
             test: /\.(js|mjs)$/,
-            exclude: /@babel(?:\/|\\{1,2})runtime/,
-            loader: require.resolve('babel-loader'),
+            loader: require.resolve("babel-loader"),
             options: {
               babelrc: false,
               configFile: false,
               compact: false,
               presets: [
                 [
-                  require.resolve('babel-preset-react-app/dependencies'),
+                  require.resolve("babel-preset-react-app/dependencies"),
                   { helpers: true },
                 ],
               ],
@@ -186,15 +193,32 @@ module.exports = {
               {
                 importLoaders: 3,
               },
-              'sass-loader',
+              "sass-loader",
             ),
             sideEffects: true,
           },
           {
-            loader: require.resolve('file-loader'),
-            exclude: [/\.(ts|tsx)$/, /\.html$/, /\.json$/],
+            test: REG_EXP.LESS,
+            exclude: REG_EXP.LESS_MODULE,
+            use: [
+              require.resolve('style-loader'),
+              {
+                loader: require.resolve('css-loader'),
+              },
+              {
+                loader: require.resolve('less-loader'),
+                options: {
+                  javascriptEnabled: true,
+                  modifyVars: variables,
+                },
+              },
+            ],
+          },
+          {
+            loader: require.resolve("file-loader"),
+            exclude: [/\.(js|mjs|jsx|ts|tsx)$/, /\.html$/, /\.json$/],
             options: {
-              name: 'static/media/[name].[hash:8].[ext]',
+              name: "static/media/[name].[hash:8].[ext]",
             },
           },
         ],
@@ -213,25 +237,26 @@ module.exports = {
     new CaseSensitivePathsPlugin(),
     new WatchMissingNodeModulesPlugin(PATHS.APP_NODE_MODULES),
     new ManifestPlugin({
-      fileName: 'asset-manifest.json',
+      fileName: "asset-manifest.json",
       publicPath: PATHS.PUBLIC_URL_OR_PATH,
       generate: (seed, files, entrypoints) => {
         const manifestFiles = files.reduce((manifest, file) => {
-          manifest[file.name] = file.path
-          return manifest
-        }, seed)
+          manifest[file.name] = file.path;
+
+          return manifest;
+        },                                 seed);
         const entrypointFiles = entrypoints.main.filter(
-          fileName => !fileName.endsWith('.map'),
-        )
+          (fileName) => !fileName.endsWith(".map"),
+        );
 
         return {
           files: manifestFiles,
           entrypoints: entrypointFiles,
-        }
+        };
       },
     }),
     new ForkTsCheckerWebpackPlugin({
-      typescript: resolve.sync('typescript', {
+      typescript: resolve.sync("typescript", {
         basedir: PATHS.APP_NODE_MODULES,
       }),
       async: true,
@@ -245,15 +270,22 @@ module.exports = {
         : undefined,
       tsconfig: PATHS.APP_TS_CONFIG,
       reportFiles: [
-        '**',
-        '!**/__tests__/**',
-        '!**/?(*.)(spec|test).*',
-        '!**/src/setupProxy.*',
-        '!**/src/setupTests.*',
+        "**",
+        "!**/__tests__/**",
+        "!**/?(*.)(spec|test).*",
+        "!**/src/setupProxy.*",
+        "!**/src/setupTests.*",
       ],
       silent: true,
+    }),
+    new AntDesignThemePlugin({
+      antDir: PATHS.APP_ANTD_MODULE,
+      stylesDir: PATHS.APP_STYLES_DIR,
+      varFile: PATHS.APP_STYLES_VARIABLES,
+      mainLessFile: PATHS.APP_STYLES_INDEX,
+      themeVariables,
     }),
   ],
   node: webpackNode(),
   performance: false,
-}
+};
