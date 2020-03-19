@@ -23,8 +23,8 @@
     "lint:tslint-fix": "tslint -c ./tslint.json -p ./tsconfig.json --fix"
   },
   "dependencies": {
-    "ramda": "^0.27.0",
-    "ramda-fantasy": "^0.8.0"
+    "funfix": "^7.0.1",
+    "ramda": "^0.27.0"
   },
   "devDependencies": {
     "@types/node": "^13.1.8",

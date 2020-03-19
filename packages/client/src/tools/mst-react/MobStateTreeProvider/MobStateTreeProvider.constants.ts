@@ -1,4 +1,4 @@
 import { createContext } from 'react'
-import { TMobStateTreeContext } from './MobStateTreeProvider.types'
+import { TMobStateTreeContext, RootStore } from './MobStateTreeProvider.types'
 
-export const MobStateTreeProviderContext: TMobStateTreeContext = createContext<object | null>(null)
+export const MobStateTreeProviderContext: TMobStateTreeContext = createContext<RootStore | null>(null)
