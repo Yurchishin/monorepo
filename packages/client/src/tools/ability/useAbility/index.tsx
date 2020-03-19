@@ -8,7 +8,7 @@ const useAbility: TUseAbility = () => {
     const ability = useContext(AbilityContext)
 
     if (!ability) {
-        throw AbilityContextError('Ability is empty')
+        throw AbilityContextError('bility is empty')
     }
 
     return [ ability.value, ability.setAbility ]

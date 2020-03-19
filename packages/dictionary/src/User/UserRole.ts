@@ -1,6 +1,7 @@
 export enum UserRole {
-    ADMIN = 'admin',
-    GUEST = 'guest',
+    GUEST,
+    ADMIN,
+    SUPER_ADMIN,
 }
 
 export const UserRoleError = {

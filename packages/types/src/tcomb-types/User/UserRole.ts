@@ -1,19 +1,24 @@
 import t from 'tcomb-validation'
 import { UserRole as UserRoles, UserRoleError } from '@chat/dictionary'
-import tString from '../String'
+import tNumber from '../Number'
 import { addErrorMessage } from '../../utils'
 
 export const AdminRole = addErrorMessage(
-    tString.Literal(UserRoles.ADMIN, 'AdminRole'),
+    tNumber.Numerical(UserRoles.ADMIN, 'AdminRole'),
     UserRoleError.TYPE,
 )
 
 export const GuestRole = addErrorMessage(
-    tString.Literal(UserRoles.GUEST, 'AdminRole'),
+    tNumber.Numerical(UserRoles.GUEST, 'AdminRole'),
+    UserRoleError.TYPE,
+)
+
+export const SuperAdminRole = addErrorMessage(
+    tNumber.Numerical(UserRoles.SUPER_ADMIN, 'SuperAdmin'),
     UserRoleError.TYPE,
 )
 
 export const UserRole = addErrorMessage(
-    t.union([AdminRole, GuestRole], 'UserRole'),
+    t.union([AdminRole, GuestRole, SuperAdminRole], 'UserRole'),
     UserRoleError.TYPE,
 )
