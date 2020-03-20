@@ -1,6 +1,8 @@
+/* tslint:disable:comment-type no-namespace interface-name no-reference-import */
 /// <reference types="node" />
 /// <reference types="react" />
 /// <reference types="react-dom" />
+import 'styled-components';
 
 declare namespace NodeJS {
   interface ProcessEnv {
@@ -67,4 +69,14 @@ declare module '*.module.scss' {
 declare module '*.module.sass' {
   const classes: { readonly [key: string]: string }
   export default classes
+}
+
+declare module 'styled-components' {
+  export interface DefaultTheme {
+    borderRadius: string
+    colors: {
+      main: string;
+      secondary: string;
+    }
+  }
 }

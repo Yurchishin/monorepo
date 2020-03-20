@@ -1,11 +1,12 @@
 import types from 'mst-types'
 import { flow } from 'mobx-state-tree'
-import { Indents, BorderRadius } from '@client/models'
+import { Indents, BorderRadius, MediaQuery } from '@client/models'
 import { createAntdTheme } from './ThemeStore.utils'
 
 const ThemeStore = types.model({
     INDENTS: Indents,
     BORDER_RADIUS: BorderRadius,
+    MEDIA_QUERY: MediaQuery,
 })
     .views(self => ({
         get antdTheme() {
@@ -15,7 +16,7 @@ const ThemeStore = types.model({
     .actions(self => {
         const updateAntdTheme = flow(function* updateAntdTheme() {
             try {
-                yield window.less.modifyVars(self.antdTheme)
+//                yield window.less.modifyVars(self.antdTheme)
             } catch (e) {
                 console.log(e)
             }

@@ -36,6 +36,7 @@
     "qs": "^6.9.1",
     "react": "^16.13.0",
     "react-dom": "^16.13.0",
+    "react-flexa": "^0.9.1",
     "react-router-dom": "^5.1.2",
     "styled-components": "^5.0.1",
     "styled-media-query": "^2.1.2",
