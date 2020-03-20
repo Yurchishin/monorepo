@@ -16,11 +16,16 @@
     "paths": {
       "@client/constants": ["constants"],
       "@client/dictionary": ["dictionary"],
+      "@client/models": ["models"],
       "@client/services": ["services"],
-      "@client/tcomb-types": ["tcomb-types"],
+      "@client/stores": ["stores"],
+      "@client/styles": ["styles"],
+      "mst-types": ["types/mst"],
+      "@client/tcomb": ["types/tcomb-types"],
+      "@client/types": ["types/typescript"],
       "@client/theme": ["theme"],
-      "@client/types": ["types"],
-      "@client/utils": ["utils"]
+      "@client/utils": ["utils"],
+      "mst-react": ["tools/mst-react"]
     }
   },
   "include": [

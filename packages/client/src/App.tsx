@@ -1,52 +1,50 @@
 import React, { FC, useState, useCallback } from 'react'
+import { Input, Button } from 'antd'
+import { MobStateTreeProvider, useMST } from 'mst-react'
+import mstStore from '@client/stores'
 import logo from './logo.svg'
 import './App.css'
-import { Input, Button } from 'antd'
 
-let initialValue = {
-    '@primary-color': '#fff',
-    '@secondary-color': '#ccc',
+const Test: FC<{}> = () => {
+    const indent = useMST('themeStore', themeStore => themeStore.BORDER_RADIUS)
+
+    console.log(indent)
+
+    return <p>aaa</p>
 }
 
+// eslint-disable-next-line react/no-multi-comp
 const App: FC = () => {
-    const [color, setColor] = useState('#1DA57A')
-    const handleColorChange = useCallback(event => {
-        setColor(event.target.value)
-        //@ts-ignore
-        window.less
-            .modifyVars(initialValue)
-    }, [setColor])
-
-    //@ts-ignore
-    console.log(window.less)
 
     return (
-        <div className="App">
-            <header className="App-header">
-                <img
-                    alt="logo"
-                    className="App-logo"
-                    src={logo}
-                />
-                <p>
+        <MobStateTreeProvider store={mstStore}>
+            <div className="App">
+                <header className="App-header">
+                    <img
+                        alt="logo"
+                        className="App-logo"
+                        src={logo}
+                    />
+                    <p>
                     Edit
-                    {' '}
-                    <code>src/App.tsx</code>
-                    {' '}
+                        {' '}
+                        <code>src/App.tsx</code>
+                        {' '}
                     and save to reload.
-                </p>
-                <Input value={color} onChange={handleColorChange} />
-                <Button type="primary">asdasd</Button>
-                <a
-                    className="App-link"
-                    href="https://reactjs.org"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                >
+                    </p>
+                    <Button type="primary">asdasd</Button>
+                    <a
+                        className="App-link"
+                        href="https://reactjs.org"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
                     Learn React
-                </a>
-            </header>
-        </div>
+                    </a>
+                    <Test />
+                </header>
+            </div>
+        </MobStateTreeProvider>
     )
 }
 
