@@ -15,7 +15,8 @@
       "@testing-library",
       "@client",
       "@chat",
-      "mobx-state-tree"
+      "mobx-state-tree",
+      "mobx-react-lite"
     ],
     "no-trailing-spaces": false,
     "typedef": [

@@ -25,7 +25,7 @@
       "@client/types": ["types/typescript"],
       "@client/theme": ["theme"],
       "@client/utils": ["utils"],
-      "mst-react": ["tools/mst-react"]
+      "mst-react-lite": ["tools/mst-react-lite"]
     }
   },
   "include": [

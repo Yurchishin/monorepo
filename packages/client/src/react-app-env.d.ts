@@ -1,9 +1,6 @@
-/* tslint:disable:comment-type no-namespace interface-name no-reference-import */
 /// <reference types="node" />
 /// <reference types="react" />
 /// <reference types="react-dom" />
-import 'styled-components';
-
 declare namespace NodeJS {
   interface ProcessEnv {
     readonly NODE_ENV: 'development' | 'production' | 'test'
@@ -13,6 +10,18 @@ declare namespace NodeJS {
 
 declare interface Window {
   less: any
+}
+
+declare module 'styled-components' {
+  import 'styled-components'
+
+  export interface DefaultTheme {
+    borderRadius: string
+    colors: {
+      main: string;
+      secondary: string;
+    }
+  }
 }
 
 declare module '*.bmp' {
@@ -41,16 +50,16 @@ declare module '*.png' {
 }
 
 declare module '*.webp' {
-    const src: string
-    export default src
+  const src: string
+  export default src
 }
 
 declare module '*.svg' {
   import * as React from 'react'
 
   export const ReactComponent: React.FunctionComponent<React.SVGProps<
-    SVGSVGElement
-  > & { title?: string }>
+      SVGSVGElement
+      > & { title?: string }>
 
   const src: string
   export default src
@@ -69,14 +78,4 @@ declare module '*.module.scss' {
 declare module '*.module.sass' {
   const classes: { readonly [key: string]: string }
   export default classes
-}
-
-declare module 'styled-components' {
-  export interface DefaultTheme {
-    borderRadius: string
-    colors: {
-      main: string;
-      secondary: string;
-    }
-  }
 }

@@ -1,11 +1,12 @@
 import types from 'mst-types'
 import { flow } from 'mobx-state-tree'
-import { Indents, BorderRadius, MediaQuery } from '@client/models'
+import { Indents, BorderRadius, MediaQuery, BoxShadow } from '@client/models'
 import { createAntdTheme } from './ThemeStore.utils'
 
 const ThemeStore = types.model({
     INDENTS: Indents,
     BORDER_RADIUS: BorderRadius,
+    BOX_SHADOWS: BoxShadow,
     MEDIA_QUERY: MediaQuery,
 })
     .views(self => ({

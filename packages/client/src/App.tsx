@@ -1,50 +1,16 @@
-import React, { FC, useState, useCallback } from 'react'
-import { Button } from 'antd'
-import { MobStateTreeProvider, useMST } from 'mst-react'
+/* eslint-disable */
+/* tslint:disable */
+import React, { FC } from 'react'
+import { MobStateTreeProvider, useMST } from 'mst-react-lite-lite'
 import mstStore from '@client/stores'
-import logo from './logo.svg'
-import './App.css'
-
-
-const Test: FC<{}> = () => {
-    const indent = useMST('themeStore', themeStore => themeStore.BORDER_RADIUS)
-
-    console.log(indent)
-
-    return <p>aaa</p>
-}
+import { BrowserRouter, Router } from 'react-router-dom'
+import './styles/index.less'
 
 // eslint-disable-next-line react/no-multi-comp
 const App: FC = () =>
-
     (
         <MobStateTreeProvider store={mstStore}>
-            <div className="App">
-                <header className="App-header">
-                    <img
-                        alt="logo"
-                        className="App-logo"
-                        src={logo}
-                    />
-                    <p>
-                    Edit
-                        {' '}
-                        <code>src/App.tsx</code>
-                        {' '}
-                    and save to reload.
-                    </p>
-                    <Button type="primary">asdasd</Button>
-                    <a
-                        className="App-link"
-                        href="https://reactjs.org"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                    >
-                    Learn React
-                    </a>
-                    <Test />
-                </header>
-            </div>
+            <BrowserRouter/>
         </MobStateTreeProvider>
     )
 

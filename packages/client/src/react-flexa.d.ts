@@ -2,7 +2,7 @@
 /* eslint-disable import/named */
 import { $Keys } from 'utility-types'
 import { ReactElement } from 'react'
-import styled, { StyledComponent, DefaultTheme } from 'styled-components'
+import { StyledComponent, DefaultTheme } from 'styled-components'
 
 declare module 'react-flexa' {
     type Media<T> = {
