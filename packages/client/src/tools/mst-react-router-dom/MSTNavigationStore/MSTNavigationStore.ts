@@ -1,36 +1,30 @@
-/* tslint:disable:no-null-keyword no-expression-statement no-if-statement no-let */
+/* tslint:disable:no-null-keyword no-expression-statement no-if-statement */
 import { addDisposer, getEnv, types } from 'mobx-state-tree'
 import { Location } from 'history'
 import { Instance } from 'mobx-state-tree/dist/core/type/type'
-import { match } from 'react-router'
-
-import {
-    location,
-    MSTNavigationRoute,
-    NavigationStoreGetEnv,
-    TMSTNavigationRoute,
-} from './MSTNavigationStore.types'
+import { MSTNavigationRoute, TMSTNavigationRouteCreateSnapshotOut } from '../MSTNavigationRoute'
+import { NavigationStoreGetEnv } from './MSTNavigationStore.types'
+import { location } from '../utils/types'
 
 const MSTNavigationStore = types.model({
     location: types.maybeNull(location),
     routes: types.map(MSTNavigationRoute),
     currentRoute: types.safeReference(MSTNavigationRoute),
 })
+    .views(self => ({
+        get match() {
+            return self.currentRoute ? self.currentRoute.match : null
+        },
+    }))
     .actions(self => {
         const { history } = getEnv<NavigationStoreGetEnv>(self)
-        let match: match | null = null
 
         const setLocation = (location: Location<undefined>) => {
             self.location = location
         }
 
-        const setMatch = (newMatch: match) => {
-            match = newMatch
-        }
-
         return {
             setLocation,
-            setMatch,
             push: history.push,
             replace: history.replace,
             go: history.go,
@@ -44,7 +38,7 @@ const MSTNavigationStore = types.model({
             self.setLocation(location)
 
             self.routes.forEach(route => {
-                if (route.path === location.pathname) {
+                if (route.match) {
                     self.currentRoute = route
                 }
             })
@@ -57,17 +51,17 @@ const MSTNavigationStore = types.model({
     .actions(self => {
         const { history } = getEnv<NavigationStoreGetEnv>(self)
 
-        const setRoutes = (routes: TMSTNavigationRoute[]) => {
+        const setRoutes = (routes: TMSTNavigationRouteCreateSnapshotOut[]) => {
             routes.forEach(route => self.routes.set(route.$mst_route_name, route))
             self.handleLocationChange(history.location)
         }
 
         const afterCreate = () => {
+            self.handleLocationChange(history.location)
+
             const disposer = history.listen(self.handleLocationChange)
 
             addDisposer(self, disposer)
-
-            self.handleLocationChange(history.location)
         }
 
         return {
