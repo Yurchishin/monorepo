@@ -2,7 +2,7 @@
 import { IUseObserverOptions } from 'mobx-react-lite/dist/useObserver'
 import { $Keys } from 'utility-types'
 import { useMSTRoot } from '../useMSTRoot'
-import { RootStore } from '../MobStateTreeProvider'
+import { RootStore } from '../MSTProvider'
 
 /*********************************************************************************************/
 
@@ -31,17 +31,17 @@ type FunctionDefaultDataSelector<SSK extends RSK, SSV extends RootStore[SSK]> = 
 
 /*********************************************************************************************/
 
-export function useMSTStore<SSK extends RSK, DSV>(
-    storeSelector: StoreSelectorKey<SSK>,
-    dataSelector?: KeyDataSelector<SSK, DSV>,
-    options?: IUseObserverOptions,
-): DSV
-
 export function useMSTStore<SSK extends RSK>(
     storeSelector: StoreSelectorKey<SSK>,
     dataSelector?: KeyDefaultDataSelector<SSK>,
     options?: IUseObserverOptions,
 ): RootStore[SSK]
+
+export function useMSTStore<SSK extends RSK, DSV>(
+    storeSelector: StoreSelectorKey<SSK>,
+    dataSelector?: KeyDataSelector<SSK, DSV>,
+    options?: IUseObserverOptions,
+): DSV
 
 export function useMSTStore<SSK extends RSK, SSV extends RootStore[SSK], DSV = SSV>(
     storeSelector: StoreSelectorFunction<SSK, SSV>,

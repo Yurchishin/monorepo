@@ -1,1 +1,1 @@
-export { default as useMSTStore } from './useMSTStore'
+export * from './useMSTStore'

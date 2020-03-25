@@ -1,12 +1,11 @@
 /* tslint:disable:no-if-statement no-throw */
-import { useContext } from 'react'
 import { useObserver } from 'mobx-react-lite'
 import { UseStoreError } from '@client/services'
-import { MobStateTreeProviderContext } from '../MobStateTreeProvider'
+import { useMST } from '../useMST'
 import { TUseMSTRoot } from './useMSTRoot.types'
 
 const useMSTRoot: TUseMSTRoot = options => {
-    const rootStore = useContext(MobStateTreeProviderContext)
+    const { rootStore } = useMST()
 
     if (!rootStore) {
         throw UseStoreError('Root stores is empty.')

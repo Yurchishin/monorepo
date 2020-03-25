@@ -1,12 +1,12 @@
 import { ExtractCSTWithSTN, IAnyType } from 'mobx-state-tree/dist/internal'
 import { typecheck } from 'mobx-state-tree'
 
-export const booleanTypecheck = <IT extends IAnyType>(type: IT, value: ExtractCSTWithSTN<IT>): boolean => {
+export const MSTTypecheck = <IT extends IAnyType>(type: IT, value: ExtractCSTWithSTN<IT>): Error | null => {
     try {
         typecheck(type, value)
 
-        return true
+        return null
     } catch (error) {
-        return false
+        return error
     }
 }

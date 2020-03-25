@@ -1,66 +1,78 @@
-/* tslint:disable:no-null-keyword no-expression-statement */
+/* tslint:disable:no-null-keyword no-expression-statement no-if-statement no-let */
 import { addDisposer, getEnv, types } from 'mobx-state-tree'
-import { History, Location } from 'history'
-import { IType } from 'mobx-state-tree/dist/internal'
+import { Location } from 'history'
 import { Instance } from 'mobx-state-tree/dist/core/type/type'
+import { match } from 'react-router'
 
-type NavigationStoreGetNev = {
-    history: History<undefined>;
-}
-
-const location: IType<Location | null | undefined, Location, Location> = types.frozen({
-    pathname: '',
-    search: '',
-    state: undefined,
-    hash: '',
-    key: '' as string | undefined,
-})
-
-const MSTNavigationRoute = types.model({
-    name: types.identifier,
-    path: types.string,
-    exact: types.boolean,
-    strict: types.boolean,
+import {
     location,
-})
+    MSTNavigationRoute,
+    NavigationStoreGetEnv,
+    TMSTNavigationRoute,
+} from './MSTNavigationStore.types'
 
 const MSTNavigationStore = types.model({
-    location,
+    location: types.maybeNull(location),
     routes: types.map(MSTNavigationRoute),
-    currentRoute: types.safeReference(MSTNavigationRoute, { acceptsUndefined: true }),
+    currentRoute: types.safeReference(MSTNavigationRoute),
 })
     .actions(self => {
-        const { history } = getEnv<NavigationStoreGetNev>(self)
+        const { history } = getEnv<NavigationStoreGetEnv>(self)
+        let match: match | null = null
 
         const setLocation = (location: Location<undefined>) => {
             self.location = location
         }
 
-        const handleLocationChange = (location: Location<undefined>) => {
-            setLocation(location)
-
-            self.routes.forEach(route => {
-                if (route.location === location) self.currentRoute = route
-            })
-        }
-
-        const afterCreate = () => {
-            handleLocationChange(history.location)
-
-            const disposer = history.listen(handleLocationChange)
-
-            addDisposer(self, disposer)
+        const setMatch = (newMatch: match) => {
+            match = newMatch
         }
 
         return {
-            afterCreate,
             setLocation,
-            handleLocationChange,
+            setMatch,
             push: history.push,
             replace: history.replace,
             go: history.go,
             goBack: history.goBack,
             goForward: history.goForward,
+            block: history.block,
+        }
+    })
+    .actions(self => {
+        const handleLocationChange = (location: Location<undefined>) => {
+            self.setLocation(location)
+
+            self.routes.forEach(route => {
+                if (route.path === location.pathname) {
+                    self.currentRoute = route
+                }
+            })
+        }
+
+        return {
+            handleLocationChange,
+        }
+    })
+    .actions(self => {
+        const { history } = getEnv<NavigationStoreGetEnv>(self)
+
+        const setRoutes = (routes: TMSTNavigationRoute[]) => {
+            routes.forEach(route => self.routes.set(route.$mst_route_name, route))
+            self.handleLocationChange(history.location)
+        }
+
+        const afterCreate = () => {
+            const disposer = history.listen(self.handleLocationChange)
+
+            addDisposer(self, disposer)
+
+            self.handleLocationChange(history.location)
+        }
+
+        return {
+            afterCreate,
+            setRoutes,
         }
     })
 

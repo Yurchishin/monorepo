@@ -1,5 +1,5 @@
 import { IUseObserverOptions } from 'mobx-react-lite/dist/useObserver'
-import { RootStore } from '../MobStateTreeProvider'
+import { RootStore } from '../MSTProvider'
 
 export type TUseMSTRoot = (
     options?: IUseObserverOptions,

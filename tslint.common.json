@@ -142,7 +142,7 @@
     ],
     "no-use-before-declare": false,
     "no-expression-statement": [
-      true,
+      "warning",
       {
         "ignore-prefix": [
           "await",
@@ -162,6 +162,8 @@
     "align": false,
     "completed-docs": false,
     "readonly-array": false,
+    "no-method-signature": false,
+    "prefer-method-signature": false,
     "no-shadowed-variable": false,
     "no-unused-variable": [true, {"ignore-pattern": "^_"}]
   }
