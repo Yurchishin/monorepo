@@ -1,6 +1,9 @@
 /// <reference types="node" />
 /// <reference types="react" />
 /// <reference types="react-dom" />
+import { TThemeStore } from 'stores'
+import 'styled-components'
+
 declare namespace NodeJS {
   interface ProcessEnv {
     readonly NODE_ENV: 'development' | 'production' | 'test'
@@ -13,15 +16,7 @@ declare interface Window {
 }
 
 declare module 'styled-components' {
-  import 'styled-components'
-
-  export interface DefaultTheme {
-    borderRadius: string
-    colors: {
-      main: string;
-      secondary: string;
-    }
-  }
+  export type DefaultTheme = TThemeStore
 }
 
 declare module '*.bmp' {

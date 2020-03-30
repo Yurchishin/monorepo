@@ -1,6 +1,7 @@
 {
   "extends": "../../tsconfig.common.json",
   "compilerOptions": {
+    "downlevelIteration": true,
     "baseUrl": "src",
     "target": "es5",
     "allowSyntheticDefaultImports": true,
@@ -17,6 +18,7 @@
       "@client/constants": ["constants"],
       "@client/dictionary": ["dictionary"],
       "@client/models": ["models"],
+      "@client/repositories": ["repositories"],
       "@client/services": ["services"],
       "@client/stores": ["stores"],
       "@client/styles": ["styles"],

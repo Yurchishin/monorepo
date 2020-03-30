@@ -1,5 +1,6 @@
 import types from 'mst-types'
 import { flow } from 'mobx-state-tree'
+import { Instance } from 'mobx-state-tree/dist/core/type/type'
 import { Indents, BorderRadius, MediaQuery, BoxShadow } from '@client/models'
 import { createAntdTheme } from './ThemeStore.utils'
 
@@ -36,5 +37,7 @@ const ThemeStore = types.model({
             afterCreate,
         }
     })
+
+export type TThemeStore = Instance<typeof ThemeStore>
 
 export default ThemeStore
