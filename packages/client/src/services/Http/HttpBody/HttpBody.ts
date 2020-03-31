@@ -12,14 +12,14 @@ class HttpBody {
         return new HttpBody(body)
     }
 
-    equals(b: HttpBody) {
-        return this._value.equals(b._value)
+    static stringify(body: Option<object> = None) {
+        body.map(JSON.stringify)
+
+        return HttpBody.of(body.map(JSON.stringify))
     }
 
-    stringify() {
-        this.map(JSON.stringify)
-
-        return this
+    equals(b: HttpBody) {
+        return this._value.equals(b._value)
     }
 
     map<B extends BodyInit>(f: (a: BodyInit) => B) {
@@ -33,7 +33,7 @@ class HttpBody {
     }
 
     get() {
-        return this._value
+        return this._value.get()
     }
 }
 

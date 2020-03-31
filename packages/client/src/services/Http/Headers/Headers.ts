@@ -6,15 +6,11 @@ class HeadersAdapter extends Headers {
         super(init as Record<string, string>)
     }
 
-    static of(init: PartialRecord<HttpHeadersName, string> = {}) {
+    static of(init: PartialRecord<HttpHeadersName, string> | Headers = {}) {
         return new HeadersAdapter(init)
     }
 
-    static fromNative(init: Headers) {
-        return new HeadersAdapter(init)
-    }
-
-    merge(name: HttpHeadersName, value: string, mergeType: HttpHeadersMergeType) {
+    merge(name: HttpHeadersName, value: string, mergeType: HttpHeadersMergeType = HttpHeadersMergeType.SET) {
         this[mergeType](name, value)
 
         return this

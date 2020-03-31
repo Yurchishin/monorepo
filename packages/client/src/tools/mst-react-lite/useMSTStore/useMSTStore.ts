@@ -1,6 +1,5 @@
 /* tslint:disable:no-if-statement no-throw newspaper-order */
 import { IUseObserverOptions } from 'mobx-react-lite/dist/useObserver'
-import { $Keys } from 'utility-types'
 import { useMSTRoot } from '../useMSTRoot'
 import { RootStore } from '../MSTProvider'
 

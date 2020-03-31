@@ -1,6 +1,5 @@
 import { Context, FC } from 'react'
 import { MstStore } from '@client/stores'
-import { $Keys } from 'utility-types'
 
 export type RootStore = MstStore
 export type NavigationStoreName = /*$Keys<RootStore>*/ 'navigationStore'

@@ -7,7 +7,6 @@ import { TMSTSwitchSwitch } from './MSTSwitch.types'
 import { useObserver } from 'mobx-react-lite'
 import { isMSTRouteComponent } from './MSTSwitch.utils'
 
-
 const MSTSwitch: TMSTSwitchSwitch = ({ children, ...switchProps }) => {
     const navigationStore = useNSTNavigationStore()
 

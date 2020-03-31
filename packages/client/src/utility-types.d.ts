@@ -3,7 +3,11 @@ declare type PartialRecord<K extends keyof any, T> =  Partial<Record<K, T>>
 
 declare type Primitive = string | number | bigint | boolean | symbol | null | undefined
 
+declare type ArrayType<T extends Array<unknown>> = T extends (infer U)[] ? U : never;
+
 declare type Falsy = false | '' | 0 | null | undefined
+
+declare type Lazy<T> = () => T
 
 declare type SetIntersection<A, B> = A extends B ? A : never
 

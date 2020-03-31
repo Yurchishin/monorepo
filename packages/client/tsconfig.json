@@ -27,6 +27,7 @@
       "@client/types": ["types/typescript"],
       "@client/theme": ["theme"],
       "@client/utils": ["utils"],
+      "mst-funfix": ["tools/mst-funfix"],
       "mst-react-lite": ["tools/mst-react-lite"],
       "mst-react-router-dom": ["tools/mst-react-router-dom"]
     }

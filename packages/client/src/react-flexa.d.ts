@@ -1,6 +1,5 @@
 /* tslint:disable:no-any */
 /* eslint-disable import/named */
-import { $Keys } from 'utility-types'
 import { ReactElement } from 'react'
 import { StyledComponent, DefaultTheme } from 'styled-components'
 

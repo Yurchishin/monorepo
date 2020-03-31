@@ -1,4 +1,3 @@
-/* tslint:disable:no-expression-statement */
 import React from 'react'
 import ReactDOM from 'react-dom'
 import App from './App'

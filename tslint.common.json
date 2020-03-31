@@ -166,6 +166,8 @@
     "prefer-method-signature": false,
     "no-shadowed-variable": false,
     "prefer-function-over-method": false,
-    "no-unused-variable": [true, {"ignore-pattern": "^_"}]
+    "no-unused-variable": [true, {"ignore-pattern": "^_"}],
+    "one-line": false,
+    "newline-per-chained-call": false
   }
 }

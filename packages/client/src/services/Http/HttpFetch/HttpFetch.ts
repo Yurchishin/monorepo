@@ -1,8 +1,8 @@
 /* eslint-disable promise/no-callback-in-promise */
-import { Cancelable, Failure, Future, Success } from '@chat/ramda'
+import { Cancelable, Failure, Future, Success, Scheduler } from '@chat/ramda'
 import HttpRequest from '../HttpRequest'
 
-const HttpFetch = (request: HttpRequest) => Future.create<Response>(
+const HttpFetch = (request: HttpRequest, ec?: Scheduler) => Future.create<Response>(
     cb => {
         fetch(request.toNative())
             .then(value => cb(Success(value)))
@@ -10,6 +10,7 @@ const HttpFetch = (request: HttpRequest) => Future.create<Response>(
 
         return Cancelable.of(request.cancel)
     },
+    ec,
 )
 
 export default HttpFetch

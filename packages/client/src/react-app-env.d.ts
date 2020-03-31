@@ -1,7 +1,7 @@
 /// <reference types="node" />
 /// <reference types="react" />
 /// <reference types="react-dom" />
-import { TThemeStore } from 'stores'
+import { ThemeStore } from '@client/stores'
 import 'styled-components'
 
 declare namespace NodeJS {
@@ -16,7 +16,7 @@ declare interface Window {
 }
 
 declare module 'styled-components' {
-  export type DefaultTheme = TThemeStore
+  export type DefaultTheme = ThemeStore
 }
 
 declare module '*.bmp' {
