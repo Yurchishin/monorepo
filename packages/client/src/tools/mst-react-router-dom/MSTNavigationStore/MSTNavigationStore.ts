@@ -26,11 +26,11 @@ const MSTNavigationStore = types.model({
         return {
             setLocation,
             push: history.push,
-            replace: history.replace,
+//            replace: history.replace,
             go: history.go,
             goBack: history.goBack,
-            goForward: history.goForward,
-            block: history.block,
+//            goForward: history.goForward,
+//            block: history.block,
         }
     })
     .actions(self => {

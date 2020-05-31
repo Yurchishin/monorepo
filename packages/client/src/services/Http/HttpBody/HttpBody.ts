@@ -2,7 +2,7 @@
 import { Option, None } from '@chat/ramda'
 
 class HttpBody {
-    private _value: Option<BodyInit> = None
+    _value: Option<BodyInit>
 
     constructor(body: Option<BodyInit> = None) {
         this._value = body

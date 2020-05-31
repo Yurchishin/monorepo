@@ -45,7 +45,7 @@ class HttpHeaders {
     }
 
     private fromNative(nativeHeaders: Headers) {
-        const headers = HeadersAdapter.fromNative(nativeHeaders)
+        const headers = HeadersAdapter.of(nativeHeaders)
 
         const httpHeaders: HttpHeader[] = []
 

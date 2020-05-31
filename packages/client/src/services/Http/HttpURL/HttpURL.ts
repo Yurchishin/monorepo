@@ -19,8 +19,7 @@ class HttpURL {
         }
     }
 
-    static of(base: URL): HttpURL
-    static of(base: string): HttpURL
+    static of(base: URL | string): HttpURL
     static of(base: string, url: string): HttpURL
     static of(base: string | URL, url: string = '') {
         return base instanceof URL ? new HttpURL(base) : new HttpURL(base, url)

@@ -70,4 +70,6 @@ export function useMSTStore<SSK extends RSK, DSV = RootStore[SSK]>(
         return dataSelector ? dataSelector(store) : store
     }
 
+const a = useMSTStore('navigationStore', store => store.currentRoute)
+
 export default useMSTStore

@@ -25,6 +25,7 @@
     "lint:tslint-fix": "tslint -c ./tslint.json -p ./tsconfig.json --fix --format stylish"
   },
   "dependencies": {
+    "@ant-design/colors": "^4.0.0",
     "@casl/ability": "^3.4.0",
     "@chat/dictionary": "^0.0.2",
     "@chat/ramda": "^0.0.2",
